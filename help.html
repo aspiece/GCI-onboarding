@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help — GCI Computer Science</title>
+  <meta name="description" content="Student help and problem reporting for GCI Computer Science courses." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ─── Header ──────────────────────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-placeholder" aria-hidden="true">GCI</div>
+        <a href="index.html" class="site-title" aria-label="GCI Computer Science home">
+          GCI Computer Science
+          <small>Student Launch Portal</small>
+        </a>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="index.html" class="nav-link">← Back to Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── Main ─────────────────────────────────────────────────────────────── -->
+  <main class="main-content" id="main-content">
+
+    <h1 class="page-heading">Need Help?</h1>
+    <p class="page-subtitle">Follow these steps before reporting a problem.</p>
+
+    <section class="info-card" aria-labelledby="help-steps-heading">
+      <h2 id="help-steps-heading">Before you report a problem, try these steps:</h2>
+      <ol class="help-steps" aria-label="Troubleshooting steps">
+        <li>
+          <span class="step-num" aria-hidden="true">1</span>
+          <div><strong>Read the error message.</strong> It often tells you exactly what is wrong. Write it down or take a screenshot.</div>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">2</span>
+          <div><strong>Verify you are using your school account.</strong> Sign out and sign back in with your <em>school</em> Google account (not a personal account).</div>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">3</span>
+          <div><strong>Ask someone at your table.</strong> A classmate may have seen the same issue.</div>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">4</span>
+          <div><strong>Refresh the page or sign in again.</strong> Close the tab, reopen the site, and try once more.</div>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">5</span>
+          <div><strong>Still stuck?</strong> Report the problem using the button below.</div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="info-card" aria-labelledby="report-heading">
+      <h2 id="report-heading">🚨 Report a Problem</h2>
+      <p>Use this form to let your instructor know you are experiencing a technical problem. Be as specific as possible.</p>
+      <button
+        class="btn-cta"
+        id="reportProblemBtn"
+        aria-label="Report a problem — opens Google Form in new tab"
+      >
+        🚨 REPORT A PROBLEM
+      </button>
+      <p class="report-note">
+        After reporting the problem, continue with anything else you can complete. Your instructor will follow up with you.
+      </p>
+    </section>
+
+    <section class="info-card" aria-labelledby="common-issues-heading">
+      <h2 id="common-issues-heading">💡 Common Issues</h2>
+      <ul>
+        <li><strong>Can&rsquo;t sign in to Google Classroom or Canvas:</strong> Make sure you&rsquo;re using your school email, not a personal account.</li>
+        <li><strong>CodeHS not loading:</strong> Try a different browser or clear your browser cache.</li>
+        <li><strong>GitHub won&rsquo;t accept your login:</strong> Confirm your username and password, or use the &ldquo;Forgot password&rdquo; link.</li>
+        <li><strong>Chromebook running slowly:</strong> Close unnecessary tabs and restart your device.</li>
+        <li><strong>Assignment not showing up:</strong> Check both Google Classroom and Canvas, and confirm you joined the correct class.</li>
+        <li><strong>Forgot a link:</strong> Return to the <a href="index.html">Start Here portal</a> — all links are there.</li>
+      </ul>
+    </section>
+
+    <section class="info-card" aria-labelledby="daily-heading">
+      <h2 id="daily-heading">📅 When You Arrive Each Day</h2>
+      <ol>
+        <li>Log in to your school account.</li>
+        <li>Open your course.</li>
+        <li>Check today&rsquo;s instructions.</li>
+        <li>Begin working.</li>
+      </ol>
+      <p style="margin-top: 1rem; color: var(--color-text-muted); font-size: 0.875rem;">Starting independently shows your instructor you&rsquo;re ready to learn.</p>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <p>Genesee Career Institute &mdash; Computer Science Department</p>
+    <p><a href="index.html">← Return to Student Portal</a></p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script>
+    // Wire up the report button using the configured URL
+    document.getElementById("reportProblemBtn").addEventListener("click", function () {
+      var url = SITE_CONFIG.helpFormUrl;
+      if (url) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCI Computer Science — Start Here</title>
+  <meta name="description" content="Student onboarding portal for Genesee Career Institute Computer Science courses." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ─── Header ──────────────────────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo-area">
+        <!-- Replace the logo-placeholder div with an <img> tag when the logo is ready:
+             <img src="assets/gci-logo.png" alt="Genesee Career Institute" width="48" height="48"> -->
+        <div class="logo-placeholder" aria-hidden="true">GCI</div>
+        <a href="index.html" class="site-title" aria-label="GCI Computer Science home">
+          GCI Computer Science
+          <small>Student Launch Portal</small>
+        </a>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="orientation.html" class="nav-link">Orientation</a>
+        <a href="help.html" class="nav-link nav-link--help" aria-label="Need help? Get support">Need Help?</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── Main ─────────────────────────────────────────────────────────────── -->
+  <main class="main-content" id="main-content">
+
+    <!-- Course Selection -->
+    <div id="course-selection" role="region" aria-label="Course selection">
+      <section class="hero">
+        <h1 class="hero-title">GCI Computer Science</h1>
+        <p class="hero-subtitle">START HERE</p>
+        <p class="hero-desc">Welcome. Let&rsquo;s make sure you&rsquo;re ready.</p>
+        <p class="course-select-prompt">Select your course to begin:</p>
+      </section>
+      <div class="course-grid" id="course-grid" role="list" aria-label="Available courses"></div>
+    </div>
+
+    <!-- Dashboard — shown after course selection -->
+    <div id="dashboard" hidden role="region" aria-label="Onboarding dashboard"></div>
+
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <p>Genesee Career Institute &mdash; Computer Science Department</p>
+    <p>Having trouble? <a href="help.html">Get help here.</a></p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

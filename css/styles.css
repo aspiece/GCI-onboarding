@@ -17,6 +17,8 @@
   --color-success-bg: #d1fae5;
   --color-warning: #92400e;
   --color-warning-bg: #fef3c7;
+  --color-warning-border: #f59e0b;
+  --color-warning-note-bg: #fffbeb;
   --color-danger: #991b1b;
   --color-danger-bg: #fee2e2;
 
@@ -406,8 +408,8 @@ button:focus-visible {
   margin-top: var(--space-md);
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  background: #fffbeb;
-  border-left: 3px solid #f59e0b;
+  background: var(--color-warning-note-bg);
+  border-left: 3px solid var(--color-warning-border);
   padding: var(--space-sm) var(--space-md);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }

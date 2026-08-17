@@ -50,9 +50,22 @@
     return d.innerHTML;
   }
 
+  // Known step keys — used for counting and scroll restoration
+  const STEP_KEYS = ["step1", "step2", "step3", "step4", "step5", "step6"];
+
+  // Step ID map for scroll restoration
+  const STEP_ID_MAP = {
+    step1: "step-signin",
+    step2: "step-class",
+    step3: "step-tools",
+    step4: "step-orientation",
+    step5: "step-setup",
+    step6: "step-mission"
+  };
+
   // ─── Progress Bar ────────────────────────────────────────────────────────────
   function renderProgressBar(progress) {
-    const completed = Object.values(progress).filter(Boolean).length;
+    const completed = STEP_KEYS.filter(k => !!progress[k]).length;
     const pct = Math.round((completed / TOTAL_STEPS) * 100);
     return `
       <div class="progress-container" aria-label="Onboarding progress">
@@ -355,16 +368,6 @@
       });
     }
   }
-
-  // Step ID map for scroll restoration
-  const STEP_ID_MAP = {
-    step1: "step-signin",
-    step2: "step-class",
-    step3: "step-tools",
-    step4: "step-orientation",
-    step5: "step-setup",
-    step6: "step-mission"
-  };
 
   // ─── Course Selection ─────────────────────────────────────────────────────────
   function showCourseSelection() {

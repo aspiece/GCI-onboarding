@@ -16,8 +16,6 @@ const SITE_CONFIG = {
   setupCheckUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdxjlf5uciQGZC0fg7-eHgv8q7NXk8B7buDldYWf4beXI_9sg/viewform",
 
   // URL for the help/problem report Google Form — replace with actual form URL
-  helpFormUrl: "https://teams.microsoft.com",
-
   // Deployed Google Apps Script web app URL for onboarding progress tracking.
   // Keep blank in public GitHub Pages deployments unless a server-side proxy is added.
   trackingScriptUrl: "", // PLACEHOLDER
@@ -50,7 +48,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "CodeHS",
@@ -69,12 +67,6 @@ const SITE_CONFIG = {
           url: "https://code.visualstudio.com",
           icon: "",
           description: "Install or update from Microsoft Store"
-        },
-        {
-          label: "Student Help Desk",
-          url: "https://teams.microsoft.com",
-          icon: "🛠️",
-          description: "Program support in Teams. Use your school email account."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_FIRST_MISSION" // PLACEHOLDER
@@ -97,7 +89,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "CodeHS",
@@ -150,7 +142,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -169,12 +161,6 @@ const SITE_CONFIG = {
           url: "https://play.juicemind.com/login",
           icon: "",
           description: "Coding activities and practice. Use your school email account."
-        },
-        {
-          label: "Student Help Desk",
-          url: "https://teams.microsoft.com",
-          icon: "🛠️",
-          description: "Program support in Teams. Use your school email account."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
@@ -197,7 +183,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -244,7 +230,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "Google Workspace",
@@ -263,12 +249,6 @@ const SITE_CONFIG = {
           url: "https://docs.google.com/PLACEHOLDER_CAREER_RESOURCES", // PLACEHOLDER
           icon: "💼",
           description: "Career exploration tools"
-        },
-        {
-          label: "Student Help Desk",
-          url: "https://teams.microsoft.com",
-          icon: "🛠️",
-          description: "Program support in Teams. Use your school email account."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_FIRST_MISSION" // PLACEHOLDER
@@ -291,7 +271,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "Google Workspace",
@@ -304,12 +284,6 @@ const SITE_CONFIG = {
           url: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_RESOURCES", // PLACEHOLDER
           icon: "🧰",
           description: "Project management and workplace resources"
-        },
-        {
-          label: "Student Help Desk",
-          url: "https://teams.microsoft.com",
-          icon: "🛠️",
-          description: "Program support in Teams. Use your school email account."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_FIRST_MISSION" // PLACEHOLDER
@@ -332,7 +306,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk. Use your school email account."
+          description: "Class communication. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -357,12 +331,6 @@ const SITE_CONFIG = {
           url: "https://workspace.google.com",
           icon: "🔵",
           description: "Docs, Sheets, Slides"
-        },
-        {
-          label: "Student Help Desk",
-          url: "https://teams.microsoft.com",
-          icon: "🛠️",
-          description: "Program support in Teams. Use your school email account."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_FIRST_MISSION" // PLACEHOLDER

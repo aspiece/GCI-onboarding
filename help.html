@@ -60,14 +60,7 @@
 
     <section class="info-card" aria-labelledby="report-heading">
       <h2 id="report-heading">Report a Problem</h2>
-      <p>Use this form to let your instructor know you are experiencing a technical problem. Be as specific as possible.</p>
-      <button
-        class="btn-cta"
-        id="reportProblemBtn"
-        aria-label="Report a problem - opens Google Form in new tab"
-      >
-        REPORT A PROBLEM
-      </button>
+      <p>Let your instructor know you are experiencing a technical problem. Be as specific as possible and include the tool, page, or error message you are seeing.</p>
       <p class="report-note">
         After reporting the problem, continue with anything else you can complete. Your instructor will follow up with you.
       </p>
@@ -104,15 +97,5 @@
     <p><a href="index.html">Return to Student Portal</a></p>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script>
-    // Wire up the report button using the configured URL
-    document.getElementById("reportProblemBtn").addEventListener("click", function () {
-      var url = SITE_CONFIG.helpFormUrl;
-      if (url) {
-        window.open(url, "_blank", "noopener,noreferrer");
-      }
-    });
-  </script>
 </body>
 </html>

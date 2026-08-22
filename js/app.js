@@ -249,7 +249,7 @@
             <li>Send this message: <strong>Hello, I am signed in to Teams and ready for class.</strong></li>
           </ol>
         </div>
-        <p class="step-note">Use your program account, not a personal account. Teams is used for class communication and the centralized student helpdesk.</p>
+        <p class="step-note">Use your program account, not a personal account. Teams is used for class communication.</p>
       </section>
     `;
   }

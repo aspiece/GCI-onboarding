@@ -51,7 +51,6 @@ The `SITE_CONFIG` object contains:
 | Key | Description |
 |-----|-------------|
 | `setupCheckUrl` | URL for the onboarding setup check Google Form |
-| `helpFormUrl` | URL for the help/problem report Google Form |
 | `secureCheckInUrl` | Public URL for the district-authenticated secure contact check-in form |
 | `courses.*` | One entry per course (see below) |
 
@@ -136,7 +135,7 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 | `PLACEHOLDER_GAME_TOOLS` | Game design tools URL |
 | `PLACEHOLDER_CAREER_RESOURCES` | Career resources URL |
 
-Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams for the student helpdesk, JuiceMind, CodeHS, GitHub for AP Computer Science A, and AP Classroom) use real public URLs and do not need updating.
+Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams, JuiceMind, CodeHS, GitHub for AP Computer Science A, and AP Classroom) use real public URLs and do not need updating.
 
 ---
 

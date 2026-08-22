@@ -183,4 +183,4 @@ Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams, JuiceMi
 - For public repositories, keep the progress-tracking shared secret in untracked `js/private-config.js`, not in committed source files.
 - Information collected is received only by GCI Computer Science program staff and used only for emergencies, workplace learning activities, and connections to potential employers.
 - Do not ask students to enter passwords in this site.
-- All tracking data should remain inside approved school Google Workspace systems.
+- All tracking data should remain inside approved school Google systems.

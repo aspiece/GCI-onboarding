@@ -228,12 +228,6 @@ const SITE_CONFIG = {
           description: "Online coding platform. Use your GCI Google credentials."
         },
         {
-          label: "Google Workspace",
-          url: "https://workspace.google.com",
-          icon: "🔵",
-          description: "Docs, Sheets, Slides"
-        },
-        {
           label: "Portfolio Resources",
           url: "https://docs.google.com/PLACEHOLDER_PORTFOLIO_RESOURCES", // PLACEHOLDER
           icon: "🧰",
@@ -274,12 +268,6 @@ const SITE_CONFIG = {
           url: "https://codehs.com",
           icon: "",
           description: "Online coding platform. Use your GCI Google credentials."
-        },
-        {
-          label: "Google Workspace",
-          url: "https://workspace.google.com",
-          icon: "🔵",
-          description: "Docs, Sheets, Slides"
         },
         {
           label: "Project Resources",
@@ -323,23 +311,11 @@ const SITE_CONFIG = {
           description: "Install or update from Microsoft Store"
         },
         {
-          label: "AI Learning Resources",
-          url: "https://docs.google.com/PLACEHOLDER_AI_RESOURCES", // PLACEHOLDER
-          icon: "🧠",
-          description: "AI foundations course materials"
-        },
-        {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
           description: "Coding activities and practice. Use your GCI Google credentials."
         },
-        {
-          label: "Google Workspace",
-          url: "https://workspace.google.com",
-          icon: "🔵",
-          description: "Docs, Sheets, Slides"
-        }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_FIRST_MISSION" // PLACEHOLDER
     }

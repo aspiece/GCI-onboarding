@@ -33,7 +33,7 @@ This setup keeps the public onboarding site separate from private student data. 
    - Value: a private random phrase you choose
 10. Deploy as a web app:
    - Execute as: User accessing the web app
-   - Who has access: users in the school Google Workspace domain
+   - Who has access: users in the school Google domain
 11. Copy the deployed web app URL.
 12. Paste the deployed web app URL into `secureCheckInUrl` in `js/config.js`.
 13. Copy `js/private-config.example.js` to `js/private-config.js` only for local/private progress tracking tests.
@@ -61,7 +61,7 @@ The first time the web app runs, Google may show a permission screen. To make th
 2. Confirm the Google account shown is the school account.
 3. Click `Review permissions`.
 4. Review the requested access. This script should only need access to the current spreadsheet and the signed-in user's email address.
-5. If your district requires app approval, ask the Google Workspace administrator to review or allow the internal Apps Script app.
+5. If your district requires app approval, ask the school Google administrator to review or allow the internal Apps Script app.
 
 Students should not proceed if the project name is still `Untitled project` or if the account shown is not their school account.
 

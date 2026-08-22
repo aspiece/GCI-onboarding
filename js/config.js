@@ -1,5 +1,5 @@
 /**
- * GCI Student Launch Portal — Site Configuration
+ * Computer Science Student Launch Portal — Site Configuration
  *
  * Edit this file to update links, add tools, or add courses.
  * No HTML changes required for most updates.
@@ -8,8 +8,8 @@
  */
 
 const SITE_CONFIG = {
-  schoolName: "Genesee Career Institute",
-  shortName: "GCI",
+  schoolName: "Computer Science Program",
+  shortName: "CS",
   department: "Computer Science",
 
   // URL for the setup check Google Form — replace with actual form URL
@@ -18,32 +18,45 @@ const SITE_CONFIG = {
   // URL for the help/problem report Google Form — replace with actual form URL
   helpFormUrl: "https://forms.google.com/PLACEHOLDER_HELP_FORM", // PLACEHOLDER
 
+  // Deployed Google Apps Script web app URL for onboarding progress tracking.
+  // Keep blank in public GitHub Pages deployments unless a server-side proxy is added.
+  trackingScriptUrl: "", // PLACEHOLDER
+
+  // Public link to the district-authenticated secure contact check-in form.
+  // This URL may be public because the Apps Script deployment should require school-domain sign-in.
+  secureCheckInUrl: "https://script.google.com/a/macros/geneseeisd.org/s/AKfycbzoh-Cmaa1xKnO5rZssUWwnqV53jIqJolaLWuo4SaRD_VUh9KHUGrnFhLqq089Eypqv/exec",
+
   courses: {
-    cs: {
-      id: "cs",
-      name: "Computer Science",
-      description: "Intro programming, problem solving, and digital literacy",
+    softwareEngineering: {
+      id: "softwareEngineering",
+      name: "Introduction to Software Engineering",
+      description: "App and game development, debugging, collaboration, and real-world problem solving",
+      requiresTechnicalSetup: true,
       lms: [
         {
           label: "Google Classroom",
           url: "https://classroom.google.com",
           icon: "🎓"
         }
-        // Add Canvas if used:
-        // { label: "Canvas", url: "https://YOUR_DISTRICT.instructure.com", icon: "📚" }
       ],
       tools: [
+        {
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
+        },
         {
           label: "CodeHS",
           url: "https://codehs.com",
-          icon: "💻",
+          icon: "",
           description: "Online coding platform"
         },
         {
-          label: "GitHub",
-          url: "https://github.com",
-          icon: "🐙",
-          description: "Code collaboration"
+          label: "Visual Studio Code",
+          url: "https://code.visualstudio.com",
+          icon: "",
+          description: "Install or update from Microsoft Store"
         },
         {
           label: "Student Help Desk",
@@ -52,69 +65,41 @@ const SITE_CONFIG = {
           description: "Technical support"
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_CS_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_CS_ORIENTATION", // PLACEHOLDER
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CS_FIRST_MISSION" // PLACEHOLDER
-    },
-
-    hardware: {
-      id: "hardware",
-      name: "Computer Hardware",
-      description: "Hardware components, repair, and troubleshooting",
-      lms: [
-        {
-          label: "Google Classroom",
-          url: "https://classroom.google.com",
-          icon: "🎓"
-        }
-      ],
-      tools: [
-        {
-          label: "CompTIA Resources",
-          url: "https://www.comptia.org/training/resources", // PLACEHOLDER — update to district resource
-          icon: "🏆",
-          description: "Certification resources"
-        },
-        {
-          label: "Hardware Lab Manual",
-          url: "https://docs.google.com/PLACEHOLDER_HARDWARE_MANUAL", // PLACEHOLDER
-          icon: "🔧",
-          description: "Lab procedures and guides"
-        },
-        {
-          label: "Student Help Desk",
-          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
-          icon: "🛠️",
-          description: "Technical support"
-        }
-      ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_HARDWARE_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_HARDWARE_ORIENTATION", // PLACEHOLDER
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_HARDWARE_FIRST_MISSION" // PLACEHOLDER
+      syllabusUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_SYLLABUS", // PLACEHOLDER
+      orientationUrl: "https://classroom.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_ORIENTATION", // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_FIRST_MISSION" // PLACEHOLDER
     },
 
     apcsa: {
       id: "apcsa",
-      name: "AP CSA / Game Design",
-      description: "AP Computer Science A and game development",
+      name: "AP Computer Science A",
+      description: "Java programming, object-oriented design, projects, and AP exam preparation",
+      requiresTechnicalSetup: true,
       lms: [
         {
           label: "Google Classroom",
           url: "https://classroom.google.com",
           icon: "🎓"
-        },
-        {
-          label: "Canvas",
-          url: "https://YOUR_DISTRICT.instructure.com", // PLACEHOLDER — replace with district Canvas URL
-          icon: "📚"
         }
       ],
       tools: [
         {
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
+        },
+        {
           label: "CodeHS",
           url: "https://codehs.com",
-          icon: "💻",
-          description: "AP CSA coding platform"
+          icon: "",
+          description: "Java coding platform"
+        },
+        {
+          label: "Visual Studio Code",
+          url: "https://code.visualstudio.com",
+          icon: "",
+          description: "Install or update from Microsoft Store"
         },
         {
           label: "GitHub",
@@ -127,12 +112,6 @@ const SITE_CONFIG = {
           url: "https://apclassroom.collegeboard.org",
           icon: "🎯",
           description: "College Board AP resources"
-        },
-        {
-          label: "Game Design Tools",
-          url: "https://docs.google.com/PLACEHOLDER_GAME_TOOLS", // PLACEHOLDER
-          icon: "🎮",
-          description: "Game development resources"
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_APCSA_SYLLABUS", // PLACEHOLDER
@@ -140,10 +119,11 @@ const SITE_CONFIG = {
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_APCSA_FIRST_MISSION" // PLACEHOLDER
     },
 
-    essentials: {
-      id: "essentials",
-      name: "Career Essentials",
-      description: "Digital skills for career and workplace readiness",
+    introCybersecurity: {
+      id: "introCybersecurity",
+      name: "Introduction to Cybersecurity",
+      description: "Digital citizenship, networks, devices, threats, and secure systems",
+      requiresTechnicalSetup: true,
       lms: [
         {
           label: "Google Classroom",
@@ -153,16 +133,108 @@ const SITE_CONFIG = {
       ],
       tools: [
         {
-          label: "Microsoft Office Online",
-          url: "https://office.com",
-          icon: "📄",
-          description: "Word, Excel, PowerPoint"
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
+        },
+        {
+          label: "Visual Studio Code",
+          url: "https://code.visualstudio.com",
+          icon: "",
+          description: "Install or update from Microsoft Store"
+        },
+        {
+          label: "CompTIA Resources",
+          url: "https://www.comptia.org/training/resources", // PLACEHOLDER — update to district resource
+          icon: "🏆",
+          description: "Certification resources"
+        },
+        {
+          label: "Student Help Desk",
+          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          icon: "🛠️",
+          description: "Technical support"
+        }
+      ],
+      syllabusUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_SYLLABUS", // PLACEHOLDER
+      orientationUrl: "https://classroom.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_ORIENTATION", // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
+    },
+
+    apCybersecurity: {
+      id: "apCybersecurity",
+      name: "AP Cybersecurity",
+      description: "Security tools, network defense, simulations, labs, and certification preparation",
+      requiresTechnicalSetup: true,
+      lms: [
+        {
+          label: "Google Classroom",
+          url: "https://classroom.google.com",
+          icon: "🎓"
+        }
+      ],
+      tools: [
+        {
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
+        },
+        {
+          label: "Visual Studio Code",
+          url: "https://code.visualstudio.com",
+          icon: "",
+          description: "Install or update from Microsoft Store"
+        },
+        {
+          label: "Cybersecurity Labs",
+          url: "https://docs.google.com/PLACEHOLDER_CYBERSECURITY_LABS", // PLACEHOLDER
+          icon: "🔐",
+          description: "Security practice activities"
+        },
+        {
+          label: "Certification Resources",
+          url: "https://docs.google.com/PLACEHOLDER_CYBER_CERT_RESOURCES", // PLACEHOLDER
+          icon: "🏆",
+          description: "Network+ and Security+ preparation"
+        }
+      ],
+      syllabusUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_SYLLABUS", // PLACEHOLDER
+      orientationUrl: "https://classroom.google.com/PLACEHOLDER_AP_CYBERSECURITY_ORIENTATION", // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
+    },
+
+    careerExploration: {
+      id: "careerExploration",
+      name: "Career Exploration",
+      description: "Career pathways, interests, resumes, portfolios, and future planning",
+      requiresTechnicalSetup: false,
+      lms: [
+        {
+          label: "Google Classroom",
+          url: "https://classroom.google.com",
+          icon: "🎓"
+        }
+      ],
+      tools: [
+        {
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
         },
         {
           label: "Google Workspace",
           url: "https://workspace.google.com",
           icon: "🔵",
           description: "Docs, Sheets, Slides"
+        },
+        {
+          label: "Portfolio Resources",
+          url: "https://docs.google.com/PLACEHOLDER_PORTFOLIO_RESOURCES", // PLACEHOLDER
+          icon: "🧰",
+          description: "Resume and portfolio support"
         },
         {
           label: "Career Resources",
@@ -177,9 +249,101 @@ const SITE_CONFIG = {
           description: "Technical support"
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_ESSENTIALS_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_ESSENTIALS_ORIENTATION", // PLACEHOLDER
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_ESSENTIALS_FIRST_MISSION" // PLACEHOLDER
+      syllabusUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_SYLLABUS", // PLACEHOLDER
+      orientationUrl: "https://classroom.google.com/PLACEHOLDER_CAREER_EXPLORATION_ORIENTATION", // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_FIRST_MISSION" // PLACEHOLDER
+    },
+
+    careerEssentials: {
+      id: "careerEssentials",
+      name: "Career Essentials",
+      description: "Workplace habits, communication, project management, teamwork, ethics, and credentials",
+      requiresTechnicalSetup: false,
+      lms: [
+        {
+          label: "Google Classroom",
+          url: "https://classroom.google.com",
+          icon: "🎓"
+        }
+      ],
+      tools: [
+        {
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
+        },
+        {
+          label: "Google Workspace",
+          url: "https://workspace.google.com",
+          icon: "🔵",
+          description: "Docs, Sheets, Slides"
+        },
+        {
+          label: "Project Resources",
+          url: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_RESOURCES", // PLACEHOLDER
+          icon: "🧰",
+          description: "Project management and workplace resources"
+        },
+        {
+          label: "Student Help Desk",
+          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          icon: "🛠️",
+          description: "Technical support"
+        }
+      ],
+      syllabusUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_SYLLABUS", // PLACEHOLDER
+      orientationUrl: "https://classroom.google.com/PLACEHOLDER_CAREER_ESSENTIALS_ORIENTATION", // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_FIRST_MISSION" // PLACEHOLDER
+    },
+
+    aiFoundations: {
+      id: "aiFoundations",
+      name: "Artificial Intelligence Foundations",
+      description: "AI systems, data, bias, ethics, career uses, and an AI for Good capstone",
+      requiresTechnicalSetup: true,
+      lms: [
+        {
+          label: "Google Classroom",
+          url: "https://classroom.google.com",
+          icon: "🎓"
+        }
+      ],
+      tools: [
+        {
+          label: "Microsoft Teams",
+          url: "https://teams.microsoft.com",
+          icon: "",
+          description: "Class communication and student helpdesk"
+        },
+        {
+          label: "Visual Studio Code",
+          url: "https://code.visualstudio.com",
+          icon: "",
+          description: "Install or update from Microsoft Store"
+        },
+        {
+          label: "AI Learning Resources",
+          url: "https://docs.google.com/PLACEHOLDER_AI_RESOURCES", // PLACEHOLDER
+          icon: "🧠",
+          description: "AI foundations course materials"
+        },
+        {
+          label: "Google Workspace",
+          url: "https://workspace.google.com",
+          icon: "🔵",
+          description: "Docs, Sheets, Slides"
+        },
+        {
+          label: "Student Help Desk",
+          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          icon: "🛠️",
+          description: "Technical support"
+        }
+      ],
+      syllabusUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_SYLLABUS", // PLACEHOLDER
+      orientationUrl: "https://classroom.google.com/PLACEHOLDER_AI_FOUNDATIONS_ORIENTATION", // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_FIRST_MISSION" // PLACEHOLDER
     }
   }
 };

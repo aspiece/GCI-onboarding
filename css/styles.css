@@ -1,6 +1,6 @@
 /* ─── CSS Variables / Branding ──────────────────────────────────────────────── */
 :root {
-  /* GCI Brand Colors — update these to match official GCI branding */
+  /* Program brand colors */
   --color-primary: #1a56db;       /* Primary blue */
   --color-primary-dark: #1244b0;
   --color-primary-light: #e8efff;
@@ -414,6 +414,74 @@ button:focus-visible {
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
+.student-info-card {
+  margin-bottom: var(--space-xl);
+}
+
+.student-info-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-fieldset {
+  display: grid;
+  gap: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.form-fieldset legend {
+  padding: 0 var(--space-sm);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.form-field label {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.form-field input {
+  width: 100%;
+  min-height: 48px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.form-field input:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-warning-note-bg);
+  color: var(--color-text);
+}
+
+.checkbox-field input {
+  margin-top: 0.35rem;
+  min-width: 1.1rem;
+  min-height: 1.1rem;
+}
+
 /* ─── Buttons ────────────────────────────────────────────────────────────────── */
 .btn-group {
   display: flex;
@@ -651,9 +719,24 @@ button:focus-visible {
 }
 
 .status-dot {
-  font-size: 1.25rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  display: inline-block;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0.45rem;
+}
+
+.status-dot--green {
+  background: var(--color-success);
+}
+
+.status-dot--yellow {
+  background: var(--color-warning-border);
+}
+
+.status-dot--red {
+  background: var(--color-danger);
 }
 
 .status-green {

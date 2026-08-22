@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 24px;
+      color: #111827;
+      background: #f8fafc;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    label,
+    legend {
+      font-weight: 700;
+    }
+
+    .field,
+    fieldset {
+      margin-bottom: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    input {
+      min-height: 42px;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font: inherit;
+    }
+
+    .required {
+      color: #b91c1c;
+    }
+
+    .hint {
+      color: #4b5563;
+      font-size: 0.92rem;
+    }
+
+    .error-summary {
+      display: none;
+      border: 2px solid #dc2626;
+      background: #fef2f2;
+      border-radius: 8px;
+      color: #7f1d1d;
+      padding: 12px;
+      margin: 16px 0;
+      font-weight: 700;
+    }
+
+    .error-summary.is-visible {
+      display: block;
+    }
+
+    .error-summary ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+      font-weight: 400;
+    }
+
+    .field.has-error input,
+    .checkbox.has-error {
+      border-color: #dc2626;
+      outline: 3px solid #fecaca;
+    }
+
+    .field-error {
+      display: none;
+      color: #b91c1c;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .field.has-error .field-error,
+    .checkbox.has-error + .field-error {
+      display: block;
+    }
+
+    fieldset {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .notice {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 12px;
+      margin: 16px 0;
+    }
+
+    .checkbox {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .checkbox input {
+      min-height: auto;
+      margin-top: 5px;
+    }
+
+    button {
+      width: 100%;
+      min-height: 48px;
+      background: #1a56db;
+      color: #ffffff;
+      border: 0;
+      border-radius: 8px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #6b7280;
+      cursor: wait;
+    }
+
+    .message {
+      margin-top: 16px;
+      font-weight: 700;
+    }
+
+    .success-panel {
+      display: none;
+      text-align: center;
+      border: 2px solid #16a34a;
+      background: #f0fdf4;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .success-panel.is-visible {
+      display: block;
+    }
+
+    .success-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .return-link {
+      display: inline-block;
+      margin-top: 12px;
+      background: #1a56db;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .secondary-note {
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Secure Contact Check-In</h1>
+    <p>Complete this district-authenticated form before returning to the onboarding portal.</p>
+    <p class="notice">Information collected is received only by GCI Computer Science program staff and used only for emergencies, workplace learning activities, and connections to potential employers. Do not enter your password.</p>
+    <p><span class="required">*</span> Required field</p>
+
+    <form id="contactForm" novalidate>
+      <div id="errorSummary" class="error-summary" role="alert"></div>
+
+      <div class="field">
+        <label for="studentName">Student full name <span class="required">*</span></label>
+        <input id="studentName" name="studentName" type="text" autocomplete="name" minlength="2" required data-error="Enter the student's first and last name.">
+        <span class="hint">Enter first and last name.</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="field">
+        <label for="studentId">Student ID number <span class="required">*</span></label>
+        <input id="studentId" name="studentId" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{3,12}" title="Enter 3 to 12 digits only." required data-error="Enter the student ID using numbers only, 3 to 12 digits.">
+        <span class="hint">Use numbers only. Example: 123456</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="field">
+        <label for="studentCellPhone">Student cell phone number <span class="required">*</span></label>
+        <input id="studentCellPhone" name="studentCellPhone" type="tel" inputmode="tel" autocomplete="tel" pattern="^(\+1[\s.-]?)?(\(?[0-9]{3}\)?[\s.-]?)[0-9]{3}[\s.-]?[0-9]{4}$" title="Enter a 10-digit phone number. Example: 810-555-1234" required data-error="Enter a 10-digit student cell phone number. Example: 810-555-1234.">
+        <span class="hint">Example: 810-555-1234</span>
+        <span class="field-error"></span>
+      </div>
+      <div class="field">
+        <label for="studentPersonalEmail">Student personal email address <span class="required">*</span></label>
+        <input id="studentPersonalEmail" name="studentPersonalEmail" type="email" autocomplete="email" placeholder="name@example.com" required data-error="Enter a valid student personal email address, like name@example.com.">
+        <span class="hint">Use an email address you can access outside of school.</span>
+        <span class="field-error"></span>
+      </div>
+
+      <fieldset>
+        <legend>Parent/guardian 1</legend>
+        <div class="field">
+          <label for="guardian1Name">Full name <span class="required">*</span></label>
+          <input id="guardian1Name" name="guardian1Name" type="text" autocomplete="off" minlength="2" required data-error="Enter parent/guardian 1's full name.">
+          <span class="field-error"></span>
+        </div>
+        <div class="field">
+          <label for="guardian1Email">Email address <span class="required">*</span></label>
+          <input id="guardian1Email" name="guardian1Email" type="email" autocomplete="off" placeholder="name@example.com" required data-error="Enter a valid email address for parent/guardian 1.">
+          <span class="field-error"></span>
+        </div>
+        <div class="field">
+          <label for="guardian1CellPhone">Cell phone number <span class="required">*</span></label>
+          <input id="guardian1CellPhone" name="guardian1CellPhone" type="tel" inputmode="tel" autocomplete="off" pattern="^(\+1[\s.-]?)?(\(?[0-9]{3}\)?[\s.-]?)[0-9]{3}[\s.-]?[0-9]{4}$" title="Enter a 10-digit phone number. Example: 810-555-1234" required data-error="Enter a 10-digit cell phone number for parent/guardian 1. Example: 810-555-1234.">
+          <span class="hint">Example: 810-555-1234</span>
+          <span class="field-error"></span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Parent/guardian 2 optional</legend>
+        <div class="field">
+          <label for="guardian2Name">Full name</label>
+          <input id="guardian2Name" name="guardian2Name" type="text" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="guardian2Email">Email address</label>
+          <input id="guardian2Email" name="guardian2Email" type="email" autocomplete="off" placeholder="name@example.com" data-error="Enter a valid email address for parent/guardian 2, or leave it blank.">
+          <span class="field-error"></span>
+        </div>
+        <div class="field">
+          <label for="guardian2CellPhone">Cell phone number</label>
+          <input id="guardian2CellPhone" name="guardian2CellPhone" type="tel" inputmode="tel" autocomplete="off" pattern="^$|^(\+1[\s.-]?)?(\(?[0-9]{3}\)?[\s.-]?)[0-9]{3}[\s.-]?[0-9]{4}$" title="Enter a 10-digit phone number. Example: 810-555-1234" data-error="Enter a 10-digit cell phone number for parent/guardian 2, or leave it blank.">
+          <span class="hint">Optional. Example: 810-555-1234</span>
+          <span class="field-error"></span>
+        </div>
+      </fieldset>
+
+      <label class="checkbox" for="privacyAcknowledged">
+        <input id="privacyAcknowledged" name="privacyAcknowledged" type="checkbox" required data-error="Check the privacy acknowledgment before submitting.">
+        <span><span class="required">*</span> I understand this information is received only by GCI Computer Science program staff and used only for emergencies, workplace learning activities, and connections to potential employers.</span>
+      </label>
+      <span class="field-error" id="privacyError"></span>
+
+      <button id="submitButton" type="submit">Submit Secure Contact Check-In</button>
+      <p id="message" class="message" role="status"></p>
+    </form>
+
+    <section id="successPanel" class="success-panel" aria-live="polite" aria-labelledby="successHeading">
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <h2 id="successHeading">Contact Check-In Submitted</h2>
+      <p>Your information was collected successfully.</p>
+      <p>Click the button below to return to the onboarding portal and continue.</p>
+      <a id="returnLink" class="return-link" href="/" target="_top">Return to Onboarding Portal</a>
+      <p class="secondary-note">If the onboarding portal is already open in another tab, you may also close this tab manually.</p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const button = document.getElementById("submitButton");
+    const message = document.getElementById("message");
+    const successPanel = document.getElementById("successPanel");
+    const returnLink = document.getElementById("returnLink");
+    const errorSummary = document.getElementById("errorSummary");
+
+    const params = new URLSearchParams(window.location.search);
+    const returnUrl = params.get("returnUrl");
+    if (returnUrl) {
+      returnLink.href = returnUrl;
+    }
+
+    function showSuccessAndReturn() {
+      form.hidden = true;
+      successPanel.classList.add("is-visible");
+
+      try {
+        if (window.opener && !window.opener.closed) {
+          window.opener.focus();
+        }
+      } catch (error) {
+        // Some browsers block opener access. The visible return link remains as the fallback.
+      }
+
+      setTimeout(() => {
+        if (returnUrl) {
+          returnLink.textContent = "Return to Onboarding Portal";
+        }
+      }, 500);
+    }
+
+    function normalizePhone(value) {
+      const digits = String(value || "").replace(/\D/g, "");
+      if (digits.length === 11 && digits.startsWith("1")) {
+        return digits.slice(1).replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+      }
+      if (digits.length === 10) {
+        return digits.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+      }
+      return value;
+    }
+
+    function getFieldLabel(field) {
+      const label = form.querySelector(`label[for="${field.id}"]`);
+      if (!label) return "A required field";
+      return label.textContent.replace("*", "").trim();
+    }
+
+    function markFieldError(field) {
+      const wrapper = field.closest(".field") || field.closest(".checkbox");
+      const errorText = field.dataset.error || field.validationMessage || "Please fix this field.";
+
+      if (wrapper) {
+        wrapper.classList.add("has-error");
+      }
+
+      const errorEl = field.id === "privacyAcknowledged"
+        ? document.getElementById("privacyError")
+        : wrapper && wrapper.querySelector(".field-error");
+
+      if (errorEl) {
+        errorEl.textContent = errorText;
+      }
+
+      return `<li><a href="#${field.id}">${getFieldLabel(field)}: ${errorText}</a></li>`;
+    }
+
+    function clearFieldErrors() {
+      form.querySelectorAll(".has-error").forEach(el => el.classList.remove("has-error"));
+      form.querySelectorAll(".field-error").forEach(el => {
+        el.textContent = "";
+      });
+      errorSummary.classList.remove("is-visible");
+      errorSummary.innerHTML = "";
+    }
+
+    function showValidationErrors() {
+      clearFieldErrors();
+      const invalidFields = Array.from(form.querySelectorAll(":invalid"));
+      if (!invalidFields.length) {
+        return true;
+      }
+
+      const firstInvalid = invalidFields[0];
+      const errors = invalidFields.map(markFieldError).join("");
+      errorSummary.innerHTML = `
+        <div>Almost there — please fix the highlighted fields before submitting.</div>
+        <ul>${errors}</ul>
+      `;
+      errorSummary.classList.add("is-visible");
+      errorSummary.scrollIntoView({ behavior: "smooth", block: "start" });
+      firstInvalid.focus();
+      return false;
+    }
+
+    form.addEventListener("input", event => {
+      const field = event.target;
+      if (!(field instanceof HTMLInputElement)) return;
+
+      if (field.checkValidity()) {
+        const wrapper = field.closest(".field") || field.closest(".checkbox");
+        if (wrapper) wrapper.classList.remove("has-error");
+        const errorEl = field.id === "privacyAcknowledged"
+          ? document.getElementById("privacyError")
+          : wrapper && wrapper.querySelector(".field-error");
+        if (errorEl) errorEl.textContent = "";
+      }
+    });
+
+    button.addEventListener("click", event => {
+      if (!showValidationErrors()) {
+        event.preventDefault();
+      }
+    });
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      if (!showValidationErrors()) return;
+
+      button.disabled = true;
+      message.textContent = "Submitting...";
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      payload.privacyAcknowledged = formData.get("privacyAcknowledged") === "on";
+      payload.studentCellPhone = normalizePhone(payload.studentCellPhone);
+      payload.guardian1CellPhone = normalizePhone(payload.guardian1CellPhone);
+      payload.guardian2CellPhone = normalizePhone(payload.guardian2CellPhone);
+
+      google.script.run
+        .withSuccessHandler(result => {
+          if (result && result.ok) {
+            showSuccessAndReturn();
+          } else {
+            button.disabled = false;
+            message.textContent = result && result.error ? result.error : "Submission failed. Ask your instructor for help.";
+          }
+        })
+        .withFailureHandler(() => {
+          button.disabled = false;
+          message.textContent = "Submission failed. Ask your instructor for help.";
+        })
+        .submitSecureContactCheckIn(payload);
+    });
+  </script>
+</body>
+</html>

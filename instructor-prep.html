@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instructor Prep - Computer Science Program</title>
+  <meta name="description" content="Instructor preparation checklist for the Computer Science program student launch portal." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-placeholder" aria-hidden="true">CS</div>
+        <a href="index.html" class="site-title" aria-label="Computer Science program home">
+          Computer Science Program
+          <small>Instructor Prep</small>
+        </a>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="index.html" class="nav-link">Student Portal</a>
+        <a href="orientation.html" class="nav-link">Orientation</a>
+        <a href="help.html" class="nav-link nav-link--help" aria-label="Need help? Get support">Need Help?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="main-content">
+    <h1 class="page-heading">Instructor Prep</h1>
+    <p class="page-subtitle">Set up the first Google Classroom interaction before students begin onboarding.</p>
+
+    <section class="info-card" aria-labelledby="prep-classroom-heading">
+      <h2 id="prep-classroom-heading">Google Classroom Introductory Post</h2>
+      <p>Create one introductory post in each Computer Science course before students use the launch portal.</p>
+      <ol>
+        <li>Open the Google Classroom course.</li>
+        <li>Create a post on the Stream or in the first-week topic.</li>
+        <li>Allow students to comment on the post.</li>
+        <li>Keep the post visible until all students complete orientation.</li>
+      </ol>
+    </section>
+
+    <section class="info-card" aria-labelledby="prep-post-heading">
+      <h2 id="prep-post-heading">Suggested Post Text</h2>
+      <p>Welcome to class. Reply to this post with a short introduction so I know you can access Google Classroom and use comments.</p>
+      <ol>
+        <li>Your preferred first name.</li>
+        <li>One technology skill you already have.</li>
+        <li>One thing you hope to learn this year.</li>
+        <li>One question you have about the course.</li>
+      </ol>
+      <p class="report-note">Students should not share passwords, student IDs, phone numbers, addresses, or other private information in their comment.</p>
+    </section>
+
+    <section class="info-card" aria-labelledby="prep-check-heading">
+      <h2 id="prep-check-heading">Before Students Start</h2>
+      <ul>
+        <li>Confirm students are enrolled in the correct Computer Science course.</li>
+        <li>Confirm first-year students are enrolled in Career Essentials.</li>
+        <li>Confirm second-year students are enrolled in Career Exploration.</li>
+        <li>Have each student's name, student ID, and temporary password ready to give to the student in person.</li>
+        <li>Have workstation assignments ready for courses that require technical setup.</li>
+        <li>Do not post or send student passwords through Google Classroom, Teams, or email.</li>
+      </ul>
+    </section>
+
+    <section class="info-card" aria-labelledby="prep-teams-heading">
+      <h2 id="prep-teams-heading">During Onboarding</h2>
+      <ul>
+        <li>Keep Microsoft Teams open while students complete the setup checklist.</li>
+        <li>Watch for student chat messages that confirm they are signed in and ready for class.</li>
+        <li>React to or reply to each student message so the student knows the message was received.</li>
+        <li>Use Teams to direct students to the student helpdesk process when they need support.</li>
+      </ul>
+    </section>
+
+    <section class="info-card" aria-labelledby="prep-tracking-heading">
+      <h2 id="prep-tracking-heading">Progress Tracking Setup</h2>
+      <p>Use the setup guide in SETUP_TRACKING.md for the current Sheet link and deployment steps.</p>
+      <ul>
+        <li>Create or open the Google Sheet that will collect onboarding progress.</li>
+        <li>Add the Apps Script files from apps-script/onboarding-tracker.gs and apps-script/SecureContactCheckIn.html.</li>
+        <li>Set a script property named TRACKING_SHARED_SECRET before deployment for public progress events.</li>
+        <li>Deploy the script as a web app restricted to users in the school Google Workspace domain.</li>
+        <li>Use the web app URL as the secure contact check-in link.</li>
+        <li>Copy js/private-config.example.js to js/private-config.js.</li>
+        <li>Paste the deployed web app URL into secureCheckInUrl and trackingScriptUrl in js/private-config.js, then add the matching shared secret.</li>
+        <li>Do not commit js/private-config.js or the live Google Sheet data to the public repository.</li>
+        <li>Confirm the Sheet is private and shared only with authorized program staff.</li>
+        <li>Test with one sample student before using it with the full class.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>Computer Science Program</p>
+    <p><a href="index.html">Return to Student Portal</a></p>
+  </footer>
+
+</body>
+</html>

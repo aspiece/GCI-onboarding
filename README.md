@@ -9,13 +9,13 @@ A lightweight, static student onboarding website for Genesee Career Institute Co
 When students arrive on the first day of class, they open one URL (or scan a QR code) and independently complete:
 
 1. Sign in to school accounts
-2. Open their class (Google Classroom / Canvas)
-3. Access course tools (CodeHS, GitHub, etc.)
+2. Open their class in Google Classroom
+3. Access course tools (CodeHS, AP Classroom, and other course-specific tools)
 4. Review course orientation
 5. Complete a setup check
 6. Start a first mission activity
 
-Progress is tracked in `localStorage` — no personal data is collected or transmitted.
+Progress is tracked in `localStorage`. When the Google Apps Script tracker is configured, student name, student ID, selected course, and onboarding progress are sent to the instructor-owned Google Sheet.
 
 ---
 
@@ -53,11 +53,12 @@ The `SITE_CONFIG` object contains:
 |-----|-------------|
 | `setupCheckUrl` | URL for the setup check Google Form |
 | `helpFormUrl` | URL for the help/problem report Google Form |
+| `secureCheckInUrl` | Public URL for the district-authenticated secure contact check-in form |
 | `courses.*` | One entry per course (see below) |
 
 Each course has:
 - `name`, `description`
-- `lms[]` — LMS buttons to show (Google Classroom, Canvas)
+- `lms[]` — LMS buttons to show (Google Classroom)
 - `tools[]` — Course-specific tools
 - `syllabusUrl` — Link to course syllabus
 - `orientationUrl` — Link to course orientation
@@ -141,18 +142,16 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 | `PLACEHOLDER_HARDWARE_*` | Computer Hardware course URLs |
 | `PLACEHOLDER_APCSA_*` | AP CSA / Game Design course URLs |
 | `PLACEHOLDER_ESSENTIALS_*` | Career Essentials course URLs |
-| `YOUR_DISTRICT.instructure.com` | Your district's Canvas domain |
 | `PLACEHOLDER_GAME_TOOLS` | Game design tools URL |
 | `PLACEHOLDER_CAREER_RESOURCES` | Career resources URL |
 
-Public services (Gmail, Google Drive, Google Classroom, GitHub, CodeHS, AP Classroom) use real public URLs and do not need updating.
+Public services (Gmail, Google Drive, Google Classroom, CodeHS, GitHub for AP Computer Science A, and AP Classroom) use real public URLs and do not need updating.
 
 ---
 
 ## Before Launch Checklist
 
 - [ ] Replace all `PLACEHOLDER` URLs in `js/config.js`
-- [ ] Replace Canvas domain (`YOUR_DISTRICT.instructure.com`) with actual district URL
 - [ ] Add GCI logo to `assets/` and update header in all HTML files
 - [ ] Update CSS brand colors in `css/styles.css` (`:root` variables)
 - [ ] Test on a student Chromebook
@@ -185,7 +184,13 @@ Public services (Gmail, Google Drive, Google Classroom, GitHub, CodeHS, AP Class
 
 ## Privacy
 
-- No student names, emails, or personal data are collected.
-- Progress tracking uses browser `localStorage` only — data stays on the student's device.
-- No analytics, tracking scripts, or third-party services are included.
-- All student-specific information remains within district Google Workspace systems.
+- Students enter their name and student ID in the public portal before selecting a course.
+- Students complete cell phone, personal email, and parent/guardian contact information in the district-authenticated Apps Script contact form.
+- Progress tracking uses browser `localStorage` so students can continue on the same device.
+- Contact and parent/guardian information is not entered into or kept by the public static site.
+- The live secure contact check-in URL may be stored in `js/config.js` when the Apps Script web app is restricted to school-domain users.
+- When `trackingScriptUrl` is configured in untracked `js/private-config.js`, course selection and step progress events are sent to the instructor-owned Google Sheet through Google Apps Script.
+- For public repositories, keep the progress-tracking shared secret in untracked `js/private-config.js`, not in committed source files.
+- Information collected is received only by GCI Computer Science program staff and used only for emergencies, workplace learning activities, and connections to potential employers.
+- Do not ask students to enter passwords in this site.
+- All tracking data should remain inside approved school Google Workspace systems.

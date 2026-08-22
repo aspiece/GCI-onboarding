@@ -192,6 +192,7 @@
           <li>Turn on sync so your bookmarks and settings stay with your account.</li>
           <li>Open the Microsoft Store on your workstation and install or update Microsoft Teams.</li>
           <li>While you are in the Microsoft Store, install or update Visual Studio Code so you are ready for coding activities.</li>
+          <li>Install or update Minecraft Education from the Microsoft Store if your instructor will use it for class activities.</li>
           </ol>
           <div class="btn-group">
             <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.teams)}" aria-label="Open Microsoft Teams in Microsoft Store">
@@ -199,6 +200,9 @@
             </button>
             <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.vscode)}" aria-label="Open Visual Studio Code in Microsoft Store">
               Install or Update Visual Studio Code
+            </button>
+            <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.minecraftEducation)}" aria-label="Open Minecraft Education in Microsoft Store">
+              Install or Update Minecraft Education
             </button>
           </div>
         </div>

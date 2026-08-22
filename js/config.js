@@ -28,7 +28,8 @@ const SITE_CONFIG = {
 
   softwareStoreLinks: {
     teams: "https://apps.microsoft.com/detail/xp8bt8dw290mpq",
-    vscode: "https://apps.microsoft.com/detail/XP9KHM4BK9FZ7Q"
+    vscode: "https://apps.microsoft.com/detail/XP9KHM4BK9FZ7Q",
+    minecraftEducation: "https://apps.microsoft.com/detail/9NBLGGH4R2R6"
   },
 
   courses: {

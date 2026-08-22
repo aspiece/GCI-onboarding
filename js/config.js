@@ -151,12 +151,6 @@ const SITE_CONFIG = {
           description: "Online coding platform. Use your GCI Google credentials."
         },
         {
-          label: "CompTIA Resources",
-          url: "https://www.comptia.org/training/resources", // PLACEHOLDER — update to district resource
-          icon: "🏆",
-          description: "Certification resources"
-        },
-        {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
@@ -169,7 +163,7 @@ const SITE_CONFIG = {
     apCybersecurity: {
       id: "apCybersecurity",
       name: "AP Cybersecurity",
-      description: "Security tools, network defense, simulations, labs, and certification preparation",
+      description: "Security tools, network defense, simulations, and applied security practice",
       requiresTechnicalSetup: true,
       lms: [
         {

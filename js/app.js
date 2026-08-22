@@ -152,7 +152,7 @@
     const secureContactContent = `
       <div class="orientation-checklist">
         <h3>Secure contact check-in</h3>
-        <p><strong>Complete this after your instructor gives you your GCI student ID and temporary password.</strong></p>
+        <p><strong>Complete this after your instructor gives you your GCI student ID and password.</strong></p>
         <p>The secure contact form asks for your student ID and contact information. If you do not know your student ID yet, stop here and ask your instructor before opening the form.</p>
         <p>GCI Computer Science staff use this information only for emergencies, workplace learning activities, and connections to potential employers.</p>
         ${getSecureCheckInUrl()
@@ -169,8 +169,9 @@
         <ol class="mission-list">
           <li>Open the browser your instructor tells you to use.</li>
           <li>Sign in with the account your instructor assigns for this course.</li>
-          <li>Create bookmarks for sites you will use often, including your class page and course resources.</li>
+          <li>Complete the secure contact check-in below if your instructor directs you to do so.</li>
         </ol>
+        ${secureContactContent}
         <p class="step-note">Career Exploration and Career Essentials may not require a workstation assignment or program credential setup.</p>
       `
       : `
@@ -179,14 +180,28 @@
           <li>Find your assigned workstation.</li>
           <li>Get your GCI student ID from your instructor.</li>
           <li>Write down your GCI email format: <strong>gci.[student ID]@students.geneseeisd.org</strong>.</li>
-          <li>Get your temporary password from your instructor in person.</li>
-          <li>After you have your GCI student ID and temporary password, complete the secure contact check-in below.</li>
+          <li>Get your password from your instructor in person.</li>
+          <li>After you have your GCI student ID and password, complete the secure contact check-in below.</li>
+        </ol>
+        ${secureContactContent}
+        <div class="orientation-checklist">
+          <h3>Tool setup</h3>
+          <p>After you submit the secure contact form, continue setting up the tools you will use often.</p>
+          <ol class="mission-list">
           <li>Open Chrome or Edge and create a browser profile with your program account.</li>
           <li>Turn on sync so your bookmarks and settings stay with your account.</li>
           <li>Open the Microsoft Store on your workstation and install or update Microsoft Teams.</li>
           <li>While you are in the Microsoft Store, install or update Visual Studio Code so you are ready for coding activities.</li>
-          <li>Create bookmarks for sites you will use often, including Gmail, Drive, your class page, and course tools.</li>
-        </ol>
+          </ol>
+          <div class="btn-group">
+            <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.teams)}" aria-label="Open Microsoft Teams in Microsoft Store">
+              Install or Update Microsoft Teams
+            </button>
+            <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.vscode)}" aria-label="Open Visual Studio Code in Microsoft Store">
+              Install or Update Visual Studio Code
+            </button>
+          </div>
+        </div>
         <p class="step-note">Example: if your student ID is 12345, your email is <strong>gci.12345@students.geneseeisd.org</strong>. Ask your instructor before saving a password on a shared or lab computer.</p>
       `;
 
@@ -198,7 +213,6 @@
           ${markCompleteBtn("step1", progress)}
         </div>
         ${setupContent}
-        ${secureContactContent}
       </section>
     `;
   }
@@ -275,7 +289,12 @@
 
   // ─── Step 3: Check Your Tools ────────────────────────────────────────────────
   function renderStep4(course, progress) {
-    const toolCards = course.tools.map(tool => `
+    const courseTools = course.tools.filter(tool => ![
+      "Microsoft Teams",
+      "Visual Studio Code"
+    ].includes(tool.label));
+
+    const toolCards = courseTools.map(tool => `
       <div class="tool-card">
         <div class="tool-icon" aria-hidden="true">${tool.icon ? esc(tool.icon) : ""}</div>
         <div class="tool-info">
@@ -292,12 +311,12 @@
       <section class="step-card" id="step-tools" aria-labelledby="step4-heading">
         <div class="step-header">
           <span class="step-number" aria-hidden="true">4</span>
-          <h2 id="step4-heading">Check Your Tools</h2>
+          <h2 id="step4-heading">Check Course-Specific Tools</h2>
           ${markCompleteBtn("step4", progress)}
         </div>
-        <p class="step-desc">Open each tool and make sure you can sign in.</p>
+        <p class="step-desc">Open the tools for this course and make sure you can sign in. You already checked Teams in Step 2, and Visual Studio Code was handled in Step 1 if your course needs it.</p>
         <div class="tool-list">
-          ${toolCards}
+          ${toolCards || `<p class="step-note">No additional course-specific tools are listed for this course. Continue to course orientation.</p>`}
         </div>
       </section>
     `;

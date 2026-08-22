@@ -26,6 +26,11 @@ const SITE_CONFIG = {
   // This URL may be public because the Apps Script deployment should require school-domain sign-in.
   secureCheckInUrl: "https://script.google.com/a/macros/geneseeisd.org/s/AKfycbzoh-Cmaa1xKnO5rZssUWwnqV53jIqJolaLWuo4SaRD_VUh9KHUGrnFhLqq089Eypqv/exec",
 
+  softwareStoreLinks: {
+    teams: "https://apps.microsoft.com/detail/xp8bt8dw290mpq",
+    vscode: "https://apps.microsoft.com/detail/XP9KHM4BK9FZ7Q"
+  },
+
   courses: {
     softwareEngineering: {
       id: "softwareEngineering",

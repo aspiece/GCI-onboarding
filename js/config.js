@@ -54,13 +54,13 @@ const SITE_CONFIG = {
           label: "CodeHS",
           url: "https://codehs.com",
           icon: "",
-          description: "Online coding platform"
+          description: "Online coding platform. Use your GCI Google credentials."
         },
         {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
-          description: "Coding activities and practice. Use your school email account."
+          description: "Coding activities and practice. Use your GCI Google credentials."
         },
         {
           label: "Visual Studio Code",
@@ -95,13 +95,13 @@ const SITE_CONFIG = {
           label: "CodeHS",
           url: "https://codehs.com",
           icon: "",
-          description: "Java coding platform"
+          description: "Java coding platform. Use your GCI Google credentials."
         },
         {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
-          description: "Coding activities and practice. Use your school email account."
+          description: "Coding activities and practice. Use your GCI Google credentials."
         },
         {
           label: "Visual Studio Code",
@@ -116,10 +116,10 @@ const SITE_CONFIG = {
           description: "Code collaboration"
         },
         {
-          label: "AP Classroom",
-          url: "https://apclassroom.collegeboard.org",
-          icon: "🎯",
-          description: "College Board AP resources"
+          label: "College Board Account",
+          url: "https://account.collegeboard.org/login/signUp?appId=292&DURL=https://www.collegeboard.org/",
+          icon: "",
+          description: "Create an account only if you do not already have one."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_APCSA_FIRST_MISSION" // PLACEHOLDER
@@ -145,6 +145,12 @@ const SITE_CONFIG = {
           description: "Class communication. Use your school email account."
         },
         {
+          label: "CodeHS",
+          url: "https://codehs.com",
+          icon: "",
+          description: "Online coding platform. Use your GCI Google credentials."
+        },
+        {
           label: "CompTIA Resources",
           url: "https://www.comptia.org/training/resources", // PLACEHOLDER — update to district resource
           icon: "🏆",
@@ -154,7 +160,7 @@ const SITE_CONFIG = {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
-          description: "Coding activities and practice. Use your school email account."
+          description: "Coding activities and practice. Use your GCI Google credentials."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
@@ -180,22 +186,22 @@ const SITE_CONFIG = {
           description: "Class communication. Use your school email account."
         },
         {
-          label: "Cybersecurity Labs",
-          url: "https://docs.google.com/PLACEHOLDER_CYBERSECURITY_LABS", // PLACEHOLDER
-          icon: "🔐",
-          description: "Security practice activities"
-        },
-        {
-          label: "Certification Resources",
-          url: "https://docs.google.com/PLACEHOLDER_CYBER_CERT_RESOURCES", // PLACEHOLDER
-          icon: "🏆",
-          description: "Network+ and Security+ preparation"
+          label: "CodeHS",
+          url: "https://codehs.com",
+          icon: "",
+          description: "Online coding platform. Use your GCI Google credentials."
         },
         {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
-          description: "Coding activities and practice. Use your school email account."
+          description: "Coding activities and practice. Use your GCI Google credentials."
+        },
+        {
+          label: "College Board Account",
+          url: "https://account.collegeboard.org/login/signUp?appId=292&DURL=https://www.collegeboard.org/",
+          icon: "",
+          description: "Create an account only if you do not already have one."
         }
       ],
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
@@ -220,6 +226,12 @@ const SITE_CONFIG = {
           url: "https://teams.microsoft.com",
           icon: "",
           description: "Class communication. Use your school email account."
+        },
+        {
+          label: "CodeHS",
+          url: "https://codehs.com",
+          icon: "",
+          description: "Online coding platform. Use your GCI Google credentials."
         },
         {
           label: "Google Workspace",
@@ -264,6 +276,12 @@ const SITE_CONFIG = {
           description: "Class communication. Use your school email account."
         },
         {
+          label: "CodeHS",
+          url: "https://codehs.com",
+          icon: "",
+          description: "Online coding platform. Use your GCI Google credentials."
+        },
+        {
           label: "Google Workspace",
           url: "https://workspace.google.com",
           icon: "🔵",
@@ -299,6 +317,12 @@ const SITE_CONFIG = {
           description: "Class communication. Use your school email account."
         },
         {
+          label: "CodeHS",
+          url: "https://codehs.com",
+          icon: "",
+          description: "Online coding platform. Use your GCI Google credentials."
+        },
+        {
           label: "Visual Studio Code",
           url: "https://code.visualstudio.com",
           icon: "",
@@ -314,7 +338,7 @@ const SITE_CONFIG = {
           label: "JuiceMind",
           url: "https://play.juicemind.com/login",
           icon: "",
-          description: "Coding activities and practice. Use your school email account."
+          description: "Coding activities and practice. Use your GCI Google credentials."
         },
         {
           label: "Google Workspace",

@@ -10,7 +10,7 @@ When students arrive on the first day of class, they open one URL (or scan a QR 
 
 1. Sign in to school accounts
 2. Open their class in Google Classroom
-3. Access course tools (CodeHS, AP Classroom, and other course-specific tools)
+3. Access course tools (CodeHS, College Board account setup for AP courses, and other course-specific tools)
 4. Submit a setup check so the instructor can track onboarding completion
 5. Start a first mission activity
 
@@ -135,7 +135,7 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 | `PLACEHOLDER_GAME_TOOLS` | Game design tools URL |
 | `PLACEHOLDER_CAREER_RESOURCES` | Career resources URL |
 
-Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams, JuiceMind, CodeHS, GitHub for AP Computer Science A, and AP Classroom) use real public URLs and do not need updating.
+Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams, JuiceMind, CodeHS, GitHub for AP Computer Science A, and College Board account setup for AP courses) use real public URLs and do not need updating.
 
 ---
 

@@ -25,58 +25,72 @@
     </div>
   </header>
 
-  <main class="main-content" id="main-content">
+  <main class="main-content main-content--wide" id="main-content">
     <h1 class="page-heading">Instructor Prep</h1>
     <p class="page-subtitle">Use this quick checklist before students begin onboarding.</p>
 
-    <section class="info-card" aria-labelledby="prep-resources-heading">
-      <h2 id="prep-resources-heading">Quick Links</h2>
-      <div class="btn-group">
-        <a class="btn-primary" href="https://classroom.google.com" target="_blank" rel="noopener noreferrer">
-          Open Google Classroom
-        </a>
-        <a class="btn-primary" href="https://teams.microsoft.com" target="_blank" rel="noopener noreferrer">
-          Open Microsoft Teams
-        </a>
-        <a class="btn-primary" href="https://docs.google.com/spreadsheets/d/1h0wxOOvXwGP4blzrsE7VrskCMFV0HK2nhd6GXSxntQ0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-          Open Progress Sheet
-        </a>
-        <a class="btn-primary" href="https://docs.google.com/spreadsheets/d/1lNpQhJmg79XLoyMt0twor0p4nEoi6B2HeP7lRLcEzGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-          Open Setup Check
-        </a>
+    <div class="instructor-layout">
+      <div class="instructor-main">
+
+        <section class="info-card" aria-labelledby="prep-start-heading">
+          <h2 id="prep-start-heading">Before Students Start</h2>
+          <ul>
+            <li>Confirm students are enrolled in the correct Computer Science course.</li>
+            <li>Confirm first-year students are enrolled in Career Essentials.</li>
+            <li>Confirm second-year students are enrolled in Career Exploration.</li>
+            <li>Have each student's name, student ID, and password ready to give to the student in person.</li>
+            <li>Give students their GCI student ID and password before directing them to the secure contact check-in form.</li>
+            <li>Have workstation assignments ready for courses that require technical setup.</li>
+            <li>Do not post or send student passwords through Google Classroom, Teams, or email.</li>
+          </ul>
+          <div class="btn-group">
+            <a class="btn-primary" href="https://docs.google.com/spreadsheets/d/1h0wxOOvXwGP4blzrsE7VrskCMFV0HK2nhd6GXSxntQ0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              Open Progress Sheet
+            </a>
+          </div>
+          <p class="report-note">Only GCI Computer Science staff should have access to the Progress Sheet and Setup Check sheet.</p>
+        </section>
+
+        <section class="info-card" aria-labelledby="prep-classroom-heading">
+          <h2 id="prep-classroom-heading">Google Classroom Post</h2>
+          <p>Create one visible post in each Computer Science course and allow students to comment.</p>
+          <p><strong>Suggested post:</strong> Welcome to class. Reply with your preferred first name, one technology skill you already have, one thing you hope to learn this year, and one question you have about the course.</p>
+          <div class="btn-group">
+            <a class="btn-primary" href="https://classroom.google.com" target="_blank" rel="noopener noreferrer">
+              Open Google Classroom
+            </a>
+          </div>
+          <p class="report-note">Students should not share passwords, student IDs, phone numbers, addresses, or other private information in their comment.</p>
+        </section>
+
+        <section class="info-card" aria-labelledby="prep-teams-heading">
+          <h2 id="prep-teams-heading">During Onboarding</h2>
+          <ul>
+            <li>Keep Microsoft Teams open while students complete the setup checklist.</li>
+            <li>Watch for student chat messages that confirm they are signed in and ready for class.</li>
+            <li>React to or reply to each student message so the student knows the message was received.</li>
+            <li>Use Teams to respond to student onboarding questions when they need support.</li>
+          </ul>
+          <div class="btn-group">
+            <a class="btn-primary" href="https://teams.microsoft.com" target="_blank" rel="noopener noreferrer">
+              Open Microsoft Teams
+            </a>
+            <a class="btn-primary" href="https://docs.google.com/spreadsheets/d/1lNpQhJmg79XLoyMt0twor0p4nEoi6B2HeP7lRLcEzGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              Open Setup Check
+            </a>
+          </div>
+        </section>
+
       </div>
-      <p class="report-note">Only GCI Computer Science staff should have access to the Progress Sheet and Setup Check sheet.</p>
-    </section>
 
-    <section class="info-card" aria-labelledby="prep-start-heading">
-      <h2 id="prep-start-heading">Before Students Start</h2>
-      <ul>
-        <li>Confirm students are enrolled in the correct Computer Science course.</li>
-        <li>Confirm first-year students are enrolled in Career Essentials.</li>
-        <li>Confirm second-year students are enrolled in Career Exploration.</li>
-        <li>Have each student's name, student ID, and password ready to give to the student in person.</li>
-        <li>Give students their GCI student ID and password before directing them to the secure contact check-in form.</li>
-        <li>Have workstation assignments ready for courses that require technical setup.</li>
-        <li>Do not post or send student passwords through Google Classroom, Teams, or email.</li>
-      </ul>
-    </section>
-
-    <section class="info-card" aria-labelledby="prep-classroom-heading">
-      <h2 id="prep-classroom-heading">Google Classroom Post</h2>
-      <p>Create one visible post in each Computer Science course and allow students to comment.</p>
-      <p><strong>Suggested post:</strong> Welcome to class. Reply with your preferred first name, one technology skill you already have, one thing you hope to learn this year, and one question you have about the course.</p>
-      <p class="report-note">Students should not share passwords, student IDs, phone numbers, addresses, or other private information in their comment.</p>
-    </section>
-
-    <section class="info-card" aria-labelledby="prep-teams-heading">
-      <h2 id="prep-teams-heading">During Onboarding</h2>
-      <ul>
-        <li>Keep Microsoft Teams open while students complete the setup checklist.</li>
-        <li>Watch for student chat messages that confirm they are signed in and ready for class.</li>
-        <li>React to or reply to each student message so the student knows the message was received.</li>
-        <li>Use Teams to respond to student onboarding questions when they need support.</li>
-      </ul>
-    </section>
+      <aside class="quick-links-box" aria-labelledby="quick-links-heading">
+        <h2 id="quick-links-heading">Quick Links</h2>
+        <a href="https://classroom.google.com" target="_blank" rel="noopener noreferrer">Google Classroom</a>
+        <a href="https://teams.microsoft.com" target="_blank" rel="noopener noreferrer">Microsoft Teams</a>
+        <a href="https://docs.google.com/spreadsheets/d/1h0wxOOvXwGP4blzrsE7VrskCMFV0HK2nhd6GXSxntQ0/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Progress Sheet</a>
+        <a href="https://docs.google.com/spreadsheets/d/1lNpQhJmg79XLoyMt0twor0p4nEoi6B2HeP7lRLcEzGc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Setup Check</a>
+      </aside>
+    </div>
 
   </main>
 

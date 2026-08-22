@@ -145,12 +145,6 @@ const SITE_CONFIG = {
           description: "Class communication. Use your school email account."
         },
         {
-          label: "Visual Studio Code",
-          url: "https://code.visualstudio.com",
-          icon: "",
-          description: "Install or update from Microsoft Store"
-        },
-        {
           label: "CompTIA Resources",
           url: "https://www.comptia.org/training/resources", // PLACEHOLDER — update to district resource
           icon: "🏆",
@@ -184,12 +178,6 @@ const SITE_CONFIG = {
           url: "https://teams.microsoft.com",
           icon: "",
           description: "Class communication. Use your school email account."
-        },
-        {
-          label: "Visual Studio Code",
-          url: "https://code.visualstudio.com",
-          icon: "",
-          description: "Install or update from Microsoft Store"
         },
         {
           label: "Cybersecurity Labs",

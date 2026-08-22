@@ -148,6 +148,16 @@
 
   // ─── Step 1: Sign In ─────────────────────────────────────────────────────────
   function renderStep1(course, progress) {
+    const needsVSCode = course.tools.some(tool => tool.label === "Visual Studio Code");
+    const vsCodeInstallTask = needsVSCode
+      ? `<li>While you are in the Microsoft Store, install or update Visual Studio Code so you are ready for coding activities.</li>`
+      : "";
+    const vsCodeInstallButton = needsVSCode
+      ? `<button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.vscode)}" aria-label="Open Visual Studio Code in Microsoft Store">
+              Install or Update Visual Studio Code
+            </button>`
+      : "";
+
     const secureContactContent = `
       <div class="task-checklist">
         <h3>Secure contact check-in</h3>
@@ -190,16 +200,14 @@
           <li>Open Chrome or Edge and create a browser profile with your program account.</li>
           <li>Turn on sync so your bookmarks and settings stay with your account.</li>
           <li>Open the Microsoft Store on your workstation and install or update Microsoft Teams.</li>
-          <li>While you are in the Microsoft Store, install or update Visual Studio Code so you are ready for coding activities.</li>
+          ${vsCodeInstallTask}
           <li>Install or update Minecraft Education from the Microsoft Store if your instructor will use it for class activities.</li>
           </ol>
           <div class="btn-group">
             <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.teams)}" aria-label="Open Microsoft Teams in Microsoft Store">
               Install or Update Microsoft Teams
             </button>
-            <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.vscode)}" aria-label="Open Visual Studio Code in Microsoft Store">
-              Install or Update Visual Studio Code
-            </button>
+            ${vsCodeInstallButton}
             <button class="btn-primary ext-link" data-url="${esc(SITE_CONFIG.softwareStoreLinks.minecraftEducation)}" aria-label="Open Minecraft Education in Microsoft Store">
               Install or Update Minecraft Education
             </button>

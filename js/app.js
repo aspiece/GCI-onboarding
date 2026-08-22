@@ -516,18 +516,21 @@
 
     grid.innerHTML = Object.values(SITE_CONFIG.courses).map(course => `
       <button
-        class="course-card"
+        class="course-card ${course.comingSoon ? "course-card--coming-soon" : ""}"
         data-course="${esc(course.id)}"
-        aria-label="Select ${esc(course.name)}"
+        aria-label="${course.comingSoon ? `${esc(course.name)} coming soon` : `Select ${esc(course.name)}`}"
+        ${course.comingSoon ? "disabled" : ""}
       >
         <span class="course-card-name">${esc(course.name)}</span>
         <span class="course-card-desc">${esc(course.description)}</span>
+        ${course.comingSoon ? `<span class="course-card-badge">Coming soon</span>` : ""}
       </button>
     `).join("");
 
     grid.querySelectorAll(".course-card").forEach(card => {
       card.addEventListener("click", () => {
         const courseId = card.dataset.course;
+        if (SITE_CONFIG.courses[courseId]?.comingSoon) return;
         saveSelectedCourse(courseId);
         sendTrackingEvent("course_selected", SITE_CONFIG.courses[courseId], {});
         renderDashboard(courseId);

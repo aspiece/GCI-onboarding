@@ -264,6 +264,18 @@ button:focus-visible {
   transform: translateY(-2px);
 }
 
+.course-card--coming-soon {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.course-card--coming-soon:hover,
+.course-card--coming-soon:focus-visible {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+
 .course-card-name {
   font-size: var(--font-size-xl);
   font-weight: 700;
@@ -275,6 +287,20 @@ button:focus-visible {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   display: block;
+}
+
+.course-card-badge {
+  align-self: center;
+  display: inline-flex;
+  margin-top: var(--space-xs);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* ─── Dashboard ──────────────────────────────────────────────────────────────── */

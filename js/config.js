@@ -205,6 +205,7 @@ const SITE_CONFIG = {
       id: "careerExploration",
       name: "Career Exploration",
       description: "Career pathways, interests, resumes, portfolios, and future planning",
+      comingSoon: true,
       requiresTechnicalSetup: false,
       lms: [
         {
@@ -246,6 +247,7 @@ const SITE_CONFIG = {
       id: "careerEssentials",
       name: "Career Essentials",
       description: "Workplace habits, communication, project management, teamwork, ethics, and credentials",
+      comingSoon: true,
       requiresTechnicalSetup: false,
       lms: [
         {

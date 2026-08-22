@@ -393,8 +393,8 @@
           <li>One specification you do <em>not</em> understand</li>
           <li>Your best explanation of what that specification means</li>
         </ol>
-        <button class="btn-cta btn-cta--secondary ext-link" data-url="${esc(course.firstMissionUrl)}" aria-label="Start First Mission — opens in new tab">
-          Start First Mission
+        <button class="btn-cta btn-cta--secondary ext-link" data-url="${esc(course.firstMissionUrl)}" aria-label="Make a copy of the First Mission worksheet - opens in new tab">
+          Make a Copy of First Mission
         </button>
       </section>
     `;

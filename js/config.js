@@ -69,7 +69,7 @@ const SITE_CONFIG = {
           description: "Install or update from Microsoft Store"
         }
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     },
 
     apcsa: {
@@ -122,7 +122,7 @@ const SITE_CONFIG = {
           description: "Create an account only if you do not already have one."
         }
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_APCSA_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     },
 
     introCybersecurity: {
@@ -157,7 +157,7 @@ const SITE_CONFIG = {
           description: "Coding activities and practice. Use your GCI Google credentials."
         }
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     },
 
     apCybersecurity: {
@@ -198,7 +198,7 @@ const SITE_CONFIG = {
           description: "Create an account only if you do not already have one."
         }
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     },
 
     careerExploration: {
@@ -240,7 +240,7 @@ const SITE_CONFIG = {
           description: "Career exploration tools"
         }
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     },
 
     careerEssentials: {
@@ -276,7 +276,7 @@ const SITE_CONFIG = {
           description: "Project management and workplace resources"
         }
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     },
 
     aiFoundations: {
@@ -317,7 +317,7 @@ const SITE_CONFIG = {
           description: "Coding activities and practice. Use your GCI Google credentials."
         },
       ],
-      firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_FIRST_MISSION" // PLACEHOLDER
+      firstMissionUrl: "https://docs.google.com/document/d/1NTul9bGwb7inbaYkDoc_8s1ZToeAYnkvS7WYSIelyyQ/copy"
     }
   }
 };

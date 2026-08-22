@@ -75,22 +75,6 @@
       </ul>
     </section>
 
-    <section class="info-card" aria-labelledby="prep-tracking-heading">
-      <h2 id="prep-tracking-heading">Progress Tracking Setup</h2>
-      <p>Use the setup guide in SETUP_TRACKING.md for the current Sheet link and deployment steps.</p>
-      <ul>
-        <li>Create or open the Google Sheet that will collect onboarding progress.</li>
-        <li>Add the Apps Script files from apps-script/onboarding-tracker.gs and apps-script/SecureContactCheckIn.html.</li>
-        <li>Set a script property named TRACKING_SHARED_SECRET before deployment for public progress events.</li>
-        <li>Deploy the script as a web app restricted to users in the school Google Workspace domain.</li>
-        <li>Use the web app URL as the secure contact check-in link.</li>
-        <li>Copy js/private-config.example.js to js/private-config.js.</li>
-        <li>Paste the deployed web app URL into secureCheckInUrl and trackingScriptUrl in js/private-config.js, then add the matching shared secret.</li>
-        <li>Do not commit js/private-config.js or the live Google Sheet data to the public repository.</li>
-        <li>Confirm the Sheet is private and shared only with authorized program staff.</li>
-        <li>Test with one sample student before using it with the full class.</li>
-      </ul>
-    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">

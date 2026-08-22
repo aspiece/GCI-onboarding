@@ -16,7 +16,7 @@ const SITE_CONFIG = {
   setupCheckUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdxjlf5uciQGZC0fg7-eHgv8q7NXk8B7buDldYWf4beXI_9sg/viewform",
 
   // URL for the help/problem report Google Form — replace with actual form URL
-  helpFormUrl: "https://forms.google.com/PLACEHOLDER_HELP_FORM", // PLACEHOLDER
+  helpFormUrl: "https://teams.microsoft.com",
 
   // Deployed Google Apps Script web app URL for onboarding progress tracking.
   // Keep blank in public GitHub Pages deployments unless a server-side proxy is added.
@@ -50,13 +50,19 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "CodeHS",
           url: "https://codehs.com",
           icon: "",
           description: "Online coding platform"
+        },
+        {
+          label: "JuiceMind",
+          url: "https://play.juicemind.com/login",
+          icon: "",
+          description: "Coding activities and practice. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -66,9 +72,9 @@ const SITE_CONFIG = {
         },
         {
           label: "Student Help Desk",
-          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          url: "https://teams.microsoft.com",
           icon: "🛠️",
-          description: "Technical support"
+          description: "Program support in Teams. Use your school email account."
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_SYLLABUS", // PLACEHOLDER
@@ -93,13 +99,19 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "CodeHS",
           url: "https://codehs.com",
           icon: "",
           description: "Java coding platform"
+        },
+        {
+          label: "JuiceMind",
+          url: "https://play.juicemind.com/login",
+          icon: "",
+          description: "Coding activities and practice. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -142,7 +154,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -157,10 +169,16 @@ const SITE_CONFIG = {
           description: "Certification resources"
         },
         {
+          label: "JuiceMind",
+          url: "https://play.juicemind.com/login",
+          icon: "",
+          description: "Coding activities and practice. Use your school email account."
+        },
+        {
           label: "Student Help Desk",
-          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          url: "https://teams.microsoft.com",
           icon: "🛠️",
-          description: "Technical support"
+          description: "Program support in Teams. Use your school email account."
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_SYLLABUS", // PLACEHOLDER
@@ -185,7 +203,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -204,6 +222,12 @@ const SITE_CONFIG = {
           url: "https://docs.google.com/PLACEHOLDER_CYBER_CERT_RESOURCES", // PLACEHOLDER
           icon: "🏆",
           description: "Network+ and Security+ preparation"
+        },
+        {
+          label: "JuiceMind",
+          url: "https://play.juicemind.com/login",
+          icon: "",
+          description: "Coding activities and practice. Use your school email account."
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_SYLLABUS", // PLACEHOLDER
@@ -228,7 +252,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "Google Workspace",
@@ -250,9 +274,9 @@ const SITE_CONFIG = {
         },
         {
           label: "Student Help Desk",
-          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          url: "https://teams.microsoft.com",
           icon: "🛠️",
-          description: "Technical support"
+          description: "Program support in Teams. Use your school email account."
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_SYLLABUS", // PLACEHOLDER
@@ -277,7 +301,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "Google Workspace",
@@ -293,9 +317,9 @@ const SITE_CONFIG = {
         },
         {
           label: "Student Help Desk",
-          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          url: "https://teams.microsoft.com",
           icon: "🛠️",
-          description: "Technical support"
+          description: "Program support in Teams. Use your school email account."
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_SYLLABUS", // PLACEHOLDER
@@ -320,7 +344,7 @@ const SITE_CONFIG = {
           label: "Microsoft Teams",
           url: "https://teams.microsoft.com",
           icon: "",
-          description: "Class communication and student helpdesk"
+          description: "Class communication and student helpdesk. Use your school email account."
         },
         {
           label: "Visual Studio Code",
@@ -335,6 +359,12 @@ const SITE_CONFIG = {
           description: "AI foundations course materials"
         },
         {
+          label: "JuiceMind",
+          url: "https://play.juicemind.com/login",
+          icon: "",
+          description: "Coding activities and practice. Use your school email account."
+        },
+        {
           label: "Google Workspace",
           url: "https://workspace.google.com",
           icon: "🔵",
@@ -342,9 +372,9 @@ const SITE_CONFIG = {
         },
         {
           label: "Student Help Desk",
-          url: "https://forms.google.com/PLACEHOLDER_HELP_DESK", // PLACEHOLDER
+          url: "https://teams.microsoft.com",
           icon: "🛠️",
-          description: "Technical support"
+          description: "Program support in Teams. Use your school email account."
         }
       ],
       syllabusUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_SYLLABUS", // PLACEHOLDER

@@ -134,8 +134,6 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 | Placeholder | Replace with |
 |-------------|-------------|
 | `PLACEHOLDER_SETUP_CHECK` | Your onboarding setup check Google Form URL |
-| `PLACEHOLDER_HELP_FORM` | Your problem report Google Form URL |
-| `PLACEHOLDER_HELP_DESK` | Your student help desk form URL |
 | `PLACEHOLDER_CS_SYLLABUS` | CS course syllabus URL |
 | `PLACEHOLDER_CS_ORIENTATION` | CS orientation assignment URL |
 | `PLACEHOLDER_CS_FIRST_MISSION` | CS first mission activity URL |
@@ -145,7 +143,7 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 | `PLACEHOLDER_GAME_TOOLS` | Game design tools URL |
 | `PLACEHOLDER_CAREER_RESOURCES` | Career resources URL |
 
-Public services (Gmail, Google Drive, Google Classroom, CodeHS, GitHub for AP Computer Science A, and AP Classroom) use real public URLs and do not need updating.
+Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams for the student helpdesk, JuiceMind, CodeHS, GitHub for AP Computer Science A, and AP Classroom) use real public URLs and do not need updating.
 
 ---
 

@@ -181,7 +181,6 @@
           <li>Complete the secure contact check-in below if your instructor directs you to do so.</li>
         </ol>
         ${secureContactContent}
-        <p class="step-note">Career Exploration and Career Essentials may not require a workstation assignment or program credential setup.</p>
       `
       : `
         <p class="step-desc">Before you sign in, make sure you have the workstation and account details assigned by your instructor.</p>

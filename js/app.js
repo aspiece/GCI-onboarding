@@ -402,9 +402,9 @@
           <h2 id="step6-heading">Setup Check</h2>
           ${markCompleteBtn("step6", progress)}
         </div>
-        <p class="step-desc">Complete the setup check to confirm everything is working.</p>
-        <button class="btn-cta ext-link" data-url="${esc(SITE_CONFIG.setupCheckUrl)}" aria-label="Complete my setup check — opens Google Form in new tab">
-          COMPLETE MY SETUP CHECK
+        <p class="step-desc">Submit the setup check after you finish the onboarding checklist. This lets your instructor know you are ready or that you still need help.</p>
+        <button class="btn-cta ext-link" data-url="${esc(SITE_CONFIG.setupCheckUrl)}" aria-label="Submit setup check — opens Google Form in new tab">
+          SUBMIT SETUP CHECK
         </button>
         <div class="status-grid">
           <div class="status-item status-green">

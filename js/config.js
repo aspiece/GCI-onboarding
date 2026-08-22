@@ -12,8 +12,8 @@ const SITE_CONFIG = {
   shortName: "CS",
   department: "Computer Science",
 
-  // URL for the setup check Google Form — replace with actual form URL
-  setupCheckUrl: "https://forms.google.com/PLACEHOLDER_SETUP_CHECK", // PLACEHOLDER
+  // URL for the onboarding setup check Google Form — replace with actual form URL
+  setupCheckUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdxjlf5uciQGZC0fg7-eHgv8q7NXk8B7buDldYWf4beXI_9sg/viewform",
 
   // URL for the help/problem report Google Form — replace with actual form URL
   helpFormUrl: "https://forms.google.com/PLACEHOLDER_HELP_FORM", // PLACEHOLDER

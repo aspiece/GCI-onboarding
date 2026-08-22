@@ -172,17 +172,6 @@
       margin-bottom: 12px;
     }
 
-    .return-link {
-      display: inline-block;
-      margin-top: 12px;
-      background: #1a56db;
-      color: #ffffff;
-      border-radius: 8px;
-      padding: 12px 18px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
     .secondary-note {
       color: #4b5563;
       font-size: 0.95rem;
@@ -277,9 +266,8 @@
       <div class="success-icon" aria-hidden="true">✓</div>
       <h2 id="successHeading">Contact Check-In Submitted</h2>
       <p>Your information was collected successfully.</p>
-      <p>Click the button below to return to the onboarding portal and continue.</p>
-      <a id="returnLink" class="return-link" href="/" target="_top">Return to Onboarding Portal</a>
-      <p class="secondary-note">If the onboarding portal is already open in another tab, you may also close this tab manually.</p>
+      <p><strong>You may now close this tab or window using the X in your browser.</strong></p>
+      <p class="secondary-note">Return to the onboarding portal tab and continue the checklist.</p>
     </section>
   </main>
 
@@ -288,32 +276,11 @@
     const button = document.getElementById("submitButton");
     const message = document.getElementById("message");
     const successPanel = document.getElementById("successPanel");
-    const returnLink = document.getElementById("returnLink");
     const errorSummary = document.getElementById("errorSummary");
-
-    const params = new URLSearchParams(window.location.search);
-    const returnUrl = params.get("returnUrl");
-    if (returnUrl) {
-      returnLink.href = returnUrl;
-    }
 
     function showSuccessAndReturn() {
       form.hidden = true;
       successPanel.classList.add("is-visible");
-
-      try {
-        if (window.opener && !window.opener.closed) {
-          window.opener.focus();
-        }
-      } catch (error) {
-        // Some browsers block opener access. The visible return link remains as the fallback.
-      }
-
-      setTimeout(() => {
-        if (returnUrl) {
-          returnLink.textContent = "Return to Onboarding Portal";
-        }
-      }, 500);
     }
 
     function normalizePhone(value) {

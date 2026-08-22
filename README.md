@@ -12,7 +12,7 @@ When students arrive on the first day of class, they open one URL (or scan a QR 
 2. Open their class in Google Classroom
 3. Access course tools (CodeHS, AP Classroom, and other course-specific tools)
 4. Review course orientation
-5. Complete a setup check
+5. Submit a setup check so the instructor can track onboarding completion
 6. Start a first mission activity
 
 Progress is tracked in `localStorage`. When the Google Apps Script tracker is configured, student name, student ID, selected course, and onboarding progress are sent to the instructor-owned Google Sheet.
@@ -51,7 +51,7 @@ The `SITE_CONFIG` object contains:
 
 | Key | Description |
 |-----|-------------|
-| `setupCheckUrl` | URL for the setup check Google Form |
+| `setupCheckUrl` | URL for the onboarding setup check Google Form |
 | `helpFormUrl` | URL for the help/problem report Google Form |
 | `secureCheckInUrl` | Public URL for the district-authenticated secure contact check-in form |
 | `courses.*` | One entry per course (see below) |
@@ -133,7 +133,7 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 
 | Placeholder | Replace with |
 |-------------|-------------|
-| `PLACEHOLDER_SETUP_CHECK` | Your setup check Google Form URL |
+| `PLACEHOLDER_SETUP_CHECK` | Your onboarding setup check Google Form URL |
 | `PLACEHOLDER_HELP_FORM` | Your problem report Google Form URL |
 | `PLACEHOLDER_HELP_DESK` | Your student help desk form URL |
 | `PLACEHOLDER_CS_SYLLABUS` | CS course syllabus URL |
@@ -157,7 +157,7 @@ Public services (Gmail, Google Drive, Google Classroom, CodeHS, GitHub for AP Co
 - [ ] Test on a student Chromebook
 - [ ] Test on a phone
 - [ ] Verify all external links open correctly
-- [ ] Create setup check Google Form and paste URL into config
+- [ ] Create onboarding setup check Google Form and paste URL into config
 - [ ] Create help/report Google Form and paste URL into config
 - [ ] Enable GitHub Pages
 

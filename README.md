@@ -184,8 +184,9 @@ Public services (Gmail, Google Drive, Google Classroom, CodeHS, GitHub for AP Co
 
 ## Privacy
 
-- Students enter their name and student ID in the public portal before selecting a course.
+- Students do not enter their name, student ID, password, or contact information directly into the public portal.
 - Students complete cell phone, personal email, and parent/guardian contact information in the district-authenticated Apps Script contact form.
+- Students submit their name, student ID, course, and setup status through the district Google Form used for the Setup Check.
 - Progress tracking uses browser `localStorage` so students can continue on the same device.
 - Contact and parent/guardian information is not entered into or kept by the public static site.
 - The live secure contact check-in URL may be stored in `js/config.js` when the Apps Script web app is restricted to school-domain users.

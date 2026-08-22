@@ -11,7 +11,6 @@
   // ─── Constants ───────────────────────────────────────────────────────────────
   const LS_COURSE = "gci_selected_course";
   const LS_PROGRESS = "gci_progress";
-  const LS_STUDENT = "gci_student_info";
   const TOTAL_STEPS = 7;
 
   // ─── Utility ─────────────────────────────────────────────────────────────────
@@ -26,19 +25,6 @@
 
   function saveProgress(progress) {
     localStorage.setItem(LS_PROGRESS, JSON.stringify(progress));
-  }
-
-  function getStudentInfo() {
-    try {
-      const raw = localStorage.getItem(LS_STUDENT);
-      return raw ? JSON.parse(raw) : null;
-    } catch {
-      return null;
-    }
-  }
-
-  function saveStudentInfo(studentInfo) {
-    localStorage.setItem(LS_STUDENT, JSON.stringify(studentInfo));
   }
 
   function getSelectedCourse() {
@@ -90,14 +76,9 @@
   function sendTrackingEvent(eventType, course, extra) {
     if (!isTrackingConfigured()) return;
 
-    const student = getStudentInfo();
-    if (!student) return;
-
     const payload = {
       eventType,
       timestamp: new Date().toISOString(),
-      studentName: student.name,
-      studentId: student.studentId,
       courseId: course.id,
       courseName: course.name,
       progress: getProgress(),
@@ -168,6 +149,20 @@
 
   // ─── Step 1: Sign In ─────────────────────────────────────────────────────────
   function renderStep1(course, progress) {
+    const secureContactContent = `
+      <div class="orientation-checklist">
+        <h3>Secure contact check-in</h3>
+        <p><strong>Complete this after your instructor gives you your GCI student ID and temporary password.</strong></p>
+        <p>The secure contact form asks for your student ID and contact information. If you do not know your student ID yet, stop here and ask your instructor before opening the form.</p>
+        <p>GCI Computer Science staff use this information only for emergencies, workplace learning activities, and connections to potential employers.</p>
+        ${getSecureCheckInUrl()
+          ? `<a class="btn-primary" href="${esc(getSecureCheckInReturnUrl())}" target="_blank" rel="noopener noreferrer" aria-label="Open secure contact form in new tab">Open Secure Contact Form</a>`
+          : `<button class="btn-primary" type="button" disabled aria-label="Open secure contact form in new tab">Open Secure Contact Form</button>`}
+        ${getSecureCheckInUrl() ? "" : `<p class="step-note">The secure contact form link has not been configured yet. Ask your instructor for help.</p>`}
+      </div>
+      <p class="step-note">Do not enter your password in any onboarding form. Passwords should only be given by your instructor in person.</p>
+    `;
+
     const setupContent = course.requiresTechnicalSetup === false
       ? `
         <p class="step-desc">Make sure you know which course platform your instructor wants you to use today.</p>
@@ -182,9 +177,10 @@
         <p class="step-desc">Before you sign in, make sure you have the workstation and account details assigned by your instructor.</p>
         <ol class="mission-list">
           <li>Find your assigned workstation.</li>
-          <li>Get your student ID from your instructor if you do not already know it.</li>
-          <li>Use this email format: <strong>gci.[student ID]@students.geneseeisd.org</strong>.</li>
-          <li>Get your temporary password from your instructor.</li>
+          <li>Get your GCI student ID from your instructor.</li>
+          <li>Write down your GCI email format: <strong>gci.[student ID]@students.geneseeisd.org</strong>.</li>
+          <li>Get your temporary password from your instructor in person.</li>
+          <li>After you have your GCI student ID and temporary password, complete the secure contact check-in below.</li>
           <li>Open Chrome or Edge and create a browser profile with your program account.</li>
           <li>Turn on sync so your bookmarks and settings stay with your account.</li>
           <li>Open the Microsoft Store on your workstation and install or update Microsoft Teams.</li>
@@ -202,58 +198,7 @@
           ${markCompleteBtn("step1", progress)}
         </div>
         ${setupContent}
-      </section>
-    `;
-  }
-
-  function renderStudentInfoPanel() {
-    const student = getStudentInfo();
-    if (student) {
-      return `
-        <section class="step-card student-info-card" aria-labelledby="student-info-heading">
-          <div class="step-header">
-            <span class="step-number" aria-hidden="true">ID</span>
-            <h2 id="student-info-heading">Student Check-In</h2>
-            <button class="btn-link" id="editStudentInfoBtn" aria-label="Edit student check-in information">Edit</button>
-          </div>
-          <p class="step-desc">Checked in as <strong>${esc(student.name)}</strong>, student ID <strong>${esc(student.studentId)}</strong>.</p>
-          <p class="step-desc">Secure contact check-in has been marked complete.</p>
-          <p class="step-note">Now select your course so your onboarding progress is connected to the correct class.</p>
-        </section>
-      `;
-    }
-
-    return `
-      <section class="step-card student-info-card" aria-labelledby="student-info-heading">
-        <div class="step-header">
-          <span class="step-number" aria-hidden="true">ID</span>
-          <h2 id="student-info-heading">Student Check-In</h2>
-        </div>
-        <p class="step-desc">Enter your name and student ID, then complete the secure contact form before you choose a course.</p>
-        <div class="orientation-checklist">
-          <h3>Secure contact form</h3>
-          <p>Contact and parent/guardian information is collected in a district-authenticated Google form, not on this public page.</p>
-          ${getSecureCheckInUrl()
-            ? `<a class="btn-primary" href="${esc(getSecureCheckInReturnUrl())}" target="_blank" rel="noopener noreferrer" aria-label="Open secure contact form in new tab">Open Secure Contact Form</a>`
-            : `<button class="btn-primary" type="button" disabled aria-label="Open secure contact form in new tab">Open Secure Contact Form</button>`}
-          ${getSecureCheckInUrl() ? "" : `<p class="step-note">The secure contact form link has not been configured yet. Ask your instructor for help.</p>`}
-        </div>
-        <form id="studentInfoForm" class="student-info-form">
-          <div class="form-field">
-            <label for="studentName">Full name</label>
-            <input id="studentName" name="studentName" type="text" autocomplete="name" required />
-          </div>
-          <div class="form-field">
-            <label for="studentId">Student ID number</label>
-            <input id="studentId" name="studentId" type="text" inputmode="numeric" autocomplete="off" required />
-          </div>
-          <label class="checkbox-field" for="privacyAcknowledge">
-            <input id="privacyAcknowledge" name="privacyAcknowledge" type="checkbox" required />
-            <span>I completed the secure contact form and understand the information is received only by GCI Computer Science program staff and used only for emergencies, workplace learning activities, and connections to potential employers.</span>
-          </label>
-          <button class="btn-cta" type="submit">CONTINUE</button>
-        </form>
-        <p class="step-note">Do not enter your password here. Contact and parent/guardian details are collected only in the secure Google form.</p>
+        ${secureContactContent}
       </section>
     `;
   }
@@ -480,13 +425,12 @@
   // ─── Dashboard ───────────────────────────────────────────────────────────────
   function renderDashboard(courseId) {
     const course = SITE_CONFIG.courses[courseId];
-    if (!course || !getStudentInfo()) {
+    if (!course) {
       showCourseSelection();
       return;
     }
 
     const progress = getProgress();
-    const student = getStudentInfo();
 
     const dashboardEl = document.getElementById("dashboard");
     const courseSelectEl = document.getElementById("course-selection");
@@ -499,7 +443,7 @@
         <div class="dashboard-title-row">
           <div>
             <h1 class="dashboard-course-name">${esc(course.name)}</h1>
-            <p class="dashboard-subtitle">Onboarding Checklist${student ? ` for ${esc(student.name)}` : ""}</p>
+            <p class="dashboard-subtitle">Onboarding Checklist</p>
           </div>
           <button class="btn-link change-course-btn" id="changeCourseBtn" aria-label="Change selected course">
             Change Course
@@ -574,51 +518,7 @@
     courseSelectEl.hidden = false;
 
     const grid = document.getElementById("course-grid");
-    const studentInfoEl = document.getElementById("student-info");
     if (!grid) return;
-
-    const student = getStudentInfo();
-    if (studentInfoEl) {
-      studentInfoEl.innerHTML = renderStudentInfoPanel();
-    }
-
-    const studentForm = document.getElementById("studentInfoForm");
-    if (studentForm) {
-      studentForm.addEventListener("submit", event => {
-        event.preventDefault();
-        const formData = new FormData(studentForm);
-        const nextStudent = {
-          name: String(formData.get("studentName") || "").trim(),
-          studentId: String(formData.get("studentId") || "").trim(),
-          privacyAcknowledged: formData.get("privacyAcknowledge") === "on"
-        };
-        if (
-          !nextStudent.name ||
-          !nextStudent.studentId ||
-          !nextStudent.privacyAcknowledged
-        ) return;
-        saveStudentInfo({
-          name: nextStudent.name,
-          studentId: nextStudent.studentId,
-          privacyAcknowledged: nextStudent.privacyAcknowledged
-        });
-        showCourseSelection();
-      });
-    }
-
-    const editStudentBtn = document.getElementById("editStudentInfoBtn");
-    if (editStudentBtn) {
-      editStudentBtn.addEventListener("click", () => {
-        localStorage.removeItem(LS_STUDENT);
-        clearSelectedCourse();
-        showCourseSelection();
-      });
-    }
-
-    if (!student) {
-      grid.innerHTML = "";
-      return;
-    }
 
     grid.innerHTML = Object.values(SITE_CONFIG.courses).map(course => `
       <button
@@ -645,7 +545,7 @@
   // ─── Init ─────────────────────────────────────────────────────────────────────
   function init() {
     const savedCourse = getSelectedCourse();
-    if (savedCourse && SITE_CONFIG.courses[savedCourse] && getStudentInfo()) {
+    if (savedCourse && SITE_CONFIG.courses[savedCourse]) {
       renderDashboard(savedCourse);
     } else {
       showCourseSelection();

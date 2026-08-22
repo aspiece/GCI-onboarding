@@ -77,8 +77,6 @@ const SITE_CONFIG = {
           description: "Program support in Teams. Use your school email account."
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_SOFTWARE_ENGINEERING_FIRST_MISSION" // PLACEHOLDER
     },
 
@@ -132,8 +130,6 @@ const SITE_CONFIG = {
           description: "College Board AP resources"
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_APCSA_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_APCSA_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_APCSA_FIRST_MISSION" // PLACEHOLDER
     },
 
@@ -181,8 +177,6 @@ const SITE_CONFIG = {
           description: "Program support in Teams. Use your school email account."
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_INTRO_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
     },
 
@@ -230,8 +224,6 @@ const SITE_CONFIG = {
           description: "Coding activities and practice. Use your school email account."
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_AP_CYBERSECURITY_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AP_CYBERSECURITY_FIRST_MISSION" // PLACEHOLDER
     },
 
@@ -279,8 +271,6 @@ const SITE_CONFIG = {
           description: "Program support in Teams. Use your school email account."
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_CAREER_EXPLORATION_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_EXPLORATION_FIRST_MISSION" // PLACEHOLDER
     },
 
@@ -322,8 +312,6 @@ const SITE_CONFIG = {
           description: "Program support in Teams. Use your school email account."
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_CAREER_ESSENTIALS_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_CAREER_ESSENTIALS_FIRST_MISSION" // PLACEHOLDER
     },
 
@@ -377,8 +365,6 @@ const SITE_CONFIG = {
           description: "Program support in Teams. Use your school email account."
         }
       ],
-      syllabusUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_SYLLABUS", // PLACEHOLDER
-      orientationUrl: "https://classroom.google.com/PLACEHOLDER_AI_FOUNDATIONS_ORIENTATION", // PLACEHOLDER
       firstMissionUrl: "https://docs.google.com/PLACEHOLDER_AI_FOUNDATIONS_FIRST_MISSION" // PLACEHOLDER
     }
   }

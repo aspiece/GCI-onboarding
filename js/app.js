@@ -11,7 +11,7 @@
   // ─── Constants ───────────────────────────────────────────────────────────────
   const LS_COURSE = "gci_selected_course";
   const LS_PROGRESS = "gci_progress";
-  const TOTAL_STEPS = 7;
+  const TOTAL_STEPS = 6;
 
   // ─── Utility ─────────────────────────────────────────────────────────────────
   function getProgress() {
@@ -104,7 +104,7 @@
   }
 
   // Known step keys — used for counting and scroll restoration
-  const STEP_KEYS = ["step1", "step2", "step3", "step4", "step5", "step6", "step7"];
+  const STEP_KEYS = ["step1", "step2", "step3", "step4", "step5", "step6"];
 
   // Step ID map for scroll restoration
   const STEP_ID_MAP = {
@@ -112,9 +112,8 @@
     step2: "step-signin",
     step3: "step-class",
     step4: "step-tools",
-    step5: "step-orientation",
-    step6: "step-setup",
-    step7: "step-mission"
+    step5: "step-setup",
+    step6: "step-mission"
   };
 
   // ─── Progress Bar ────────────────────────────────────────────────────────────
@@ -150,7 +149,7 @@
   // ─── Step 1: Sign In ─────────────────────────────────────────────────────────
   function renderStep1(course, progress) {
     const secureContactContent = `
-      <div class="orientation-checklist">
+      <div class="task-checklist">
         <h3>Secure contact check-in</h3>
         <p><strong>Complete this after your instructor gives you your GCI student ID and password.</strong></p>
         <p>The secure contact form asks for your student ID and contact information. If you do not know your student ID yet, stop here and ask your instructor before opening the form.</p>
@@ -184,7 +183,7 @@
           <li>After you have your GCI student ID and password, complete the secure contact check-in below.</li>
         </ol>
         ${secureContactContent}
-        <div class="orientation-checklist">
+        <div class="task-checklist">
           <h3>Tool setup</h3>
           <p>After you submit the secure contact form, continue setting up the tools you will use often.</p>
           <ol class="mission-list">
@@ -242,7 +241,7 @@
             Microsoft Teams
           </button>
         </div>
-        <div class="orientation-checklist">
+        <div class="task-checklist">
           <h3>Teams chat task</h3>
           <ol>
             <li>Open Microsoft Teams.</li>
@@ -273,7 +272,7 @@
         <div class="btn-group">
           ${lmsButtons}
         </div>
-        <div class="orientation-checklist">
+        <div class="task-checklist">
           <h3>Google Classroom check</h3>
           <ol>
             <li>Open Google Classroom.</li>
@@ -320,42 +319,7 @@
         </div>
         <p class="step-desc">Open the tools for this course and make sure you can sign in. You already checked Teams in Step 2, and Visual Studio Code was handled in Step 1 if your course needs it.</p>
         <div class="tool-list">
-          ${toolCards || `<p class="step-note">No additional course-specific tools are listed for this course. Continue to course orientation.</p>`}
-        </div>
-      </section>
-    `;
-  }
-
-  // ─── Step 4: Course Orientation ───────────────────────────────────────────────
-  function renderStep5(course, progress) {
-    return `
-      <section class="step-card" id="step-orientation" aria-labelledby="step5-heading">
-        <div class="step-header">
-          <span class="step-number" aria-hidden="true">5</span>
-          <h2 id="step5-heading">Course Orientation</h2>
-          ${markCompleteBtn("step5", progress)}
-        </div>
-        <p class="step-desc">Review your course syllabus and complete the orientation.</p>
-        <div class="btn-group">
-          <button class="btn-primary ext-link" data-url="${esc(course.syllabusUrl)}" aria-label="View Course Syllabus in new tab">
-            View Course Syllabus
-          </button>
-          <button class="btn-primary ext-link" data-url="${esc(course.orientationUrl)}" aria-label="Start Course Orientation in new tab">
-            Start Course Orientation
-          </button>
-        </div>
-        <div class="orientation-checklist">
-          <h3>During orientation you will learn:</h3>
-          <ul>
-            <li>Where assignments are posted</li>
-            <li>How assignments are submitted</li>
-            <li>What to do when absent</li>
-            <li>How to ask for help</li>
-            <li>Equipment expectations</li>
-            <li>What to do when technology fails</li>
-            <li>Appropriate AI use</li>
-            <li>How grades work</li>
-          </ul>
+          ${toolCards || `<p class="step-note">No additional course-specific tools are listed for this course. Continue to the setup check.</p>`}
         </div>
       </section>
     `;
@@ -364,11 +328,11 @@
   // ─── Step 5: Setup Check ─────────────────────────────────────────────────────
   function renderStep6(progress) {
     return `
-      <section class="step-card" id="step-setup" aria-labelledby="step6-heading">
+      <section class="step-card" id="step-setup" aria-labelledby="step5-heading">
         <div class="step-header">
-          <span class="step-number" aria-hidden="true">6</span>
-          <h2 id="step6-heading">Setup Check</h2>
-          ${markCompleteBtn("step6", progress)}
+          <span class="step-number" aria-hidden="true">5</span>
+          <h2 id="step5-heading">Setup Check</h2>
+          ${markCompleteBtn("step5", progress)}
         </div>
         <p class="step-desc">Submit the setup check after you finish the onboarding checklist. This lets your instructor know you are ready or that you still need help.</p>
         <button class="btn-cta ext-link" data-url="${esc(SITE_CONFIG.setupCheckUrl)}" aria-label="Submit setup check — opens Google Form in new tab">
@@ -404,11 +368,11 @@
   // ─── Step 6: First Mission ────────────────────────────────────────────────────
   function renderStep7(course, progress) {
     return `
-      <section class="step-card step-card--accent" id="step-mission" aria-labelledby="step7-heading">
+      <section class="step-card step-card--accent" id="step-mission" aria-labelledby="step6-heading">
         <div class="step-header">
-          <span class="step-number" aria-hidden="true">7</span>
-          <h2 id="step7-heading">First Mission</h2>
-          ${markCompleteBtn("step7", progress)}
+          <span class="step-number" aria-hidden="true">6</span>
+          <h2 id="step6-heading">First Mission</h2>
+          ${markCompleteBtn("step6", progress)}
         </div>
         <p class="step-lead"><strong>Everything working? Don't wait.</strong></p>
         <h3>Meet Your Computer</h3>
@@ -479,7 +443,6 @@
         ${renderStep2(progress)}
         ${renderStep3(course, progress)}
         ${renderStep4(course, progress)}
-        ${renderStep5(course, progress)}
         ${renderStep6(progress)}
         ${renderStep7(course, progress)}
       </div>

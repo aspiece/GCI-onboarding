@@ -11,9 +11,8 @@ When students arrive on the first day of class, they open one URL (or scan a QR 
 1. Sign in to school accounts
 2. Open their class in Google Classroom
 3. Access course tools (CodeHS, AP Classroom, and other course-specific tools)
-4. Review course orientation
-5. Submit a setup check so the instructor can track onboarding completion
-6. Start a first mission activity
+4. Submit a setup check so the instructor can track onboarding completion
+5. Start a first mission activity
 
 Progress is tracked in `localStorage`. When the Google Apps Script tracker is configured, student name, student ID, selected course, and onboarding progress are sent to the instructor-owned Google Sheet.
 
@@ -60,8 +59,6 @@ Each course has:
 - `name`, `description`
 - `lms[]` — LMS buttons to show (Google Classroom)
 - `tools[]` — Course-specific tools
-- `syllabusUrl` — Link to course syllabus
-- `orientationUrl` — Link to course orientation
 - `firstMissionUrl` — Link to first mission activity
 
 ---
@@ -72,10 +69,10 @@ Open `js/config.js` and update the URL for the relevant tool, course, or form. E
 
 ```js
 // Before
-syllabusUrl: "https://docs.google.com/PLACEHOLDER_CS_SYLLABUS",
+firstMissionUrl: "https://docs.google.com/PLACEHOLDER_FIRST_MISSION",
 
 // After
-syllabusUrl: "https://docs.google.com/d/YOUR_REAL_DOC_ID/view",
+firstMissionUrl: "https://docs.google.com/d/YOUR_REAL_DOC_ID/view",
 ```
 
 ---
@@ -97,8 +94,6 @@ courses: {
     tools: [
       { label: "Packet Tracer", url: "https://PLACEHOLDER", icon: "🌐", description: "Network simulation" }
     ],
-    syllabusUrl: "https://docs.google.com/PLACEHOLDER_NETWORKING_SYLLABUS",
-    orientationUrl: "https://classroom.google.com/PLACEHOLDER_NETWORKING_ORIENTATION",
     firstMissionUrl: "https://docs.google.com/PLACEHOLDER_NETWORKING_FIRST_MISSION"
   }
 }
@@ -111,7 +106,7 @@ No HTML changes are needed. The new course card will appear automatically.
 ## Where to Place the GCI Logo
 
 1. Add your logo file to `assets/gci-logo.png` (or `.svg`).
-2. In each HTML file (`index.html`, `orientation.html`, `help.html`), replace this block:
+2. In each HTML file (`index.html`, `instructor-prep.html`, `help.html`), replace this block:
 
 ```html
 <div class="logo-placeholder" aria-hidden="true">GCI</div>
@@ -134,8 +129,6 @@ All placeholder URLs are marked with `// PLACEHOLDER` in `js/config.js`. Before 
 | Placeholder | Replace with |
 |-------------|-------------|
 | `PLACEHOLDER_SETUP_CHECK` | Your onboarding setup check Google Form URL |
-| `PLACEHOLDER_CS_SYLLABUS` | CS course syllabus URL |
-| `PLACEHOLDER_CS_ORIENTATION` | CS orientation assignment URL |
 | `PLACEHOLDER_CS_FIRST_MISSION` | CS first mission activity URL |
 | `PLACEHOLDER_HARDWARE_*` | Computer Hardware course URLs |
 | `PLACEHOLDER_APCSA_*` | AP CSA / Game Design course URLs |
@@ -166,7 +159,6 @@ Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams for the 
 ```
 /
 ├── index.html          # Homepage + onboarding dashboard
-├── orientation.html    # Course orientation reference page
 ├── help.html           # Help workflow and problem reporting
 ├── css/
 │   └── styles.css      # All styles, CSS variables for branding

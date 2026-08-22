@@ -10,5 +10,5 @@ Place static assets here:
 
 Update the `logo-placeholder` div in:
 - `index.html`
-- `orientation.html`
+- `instructor-prep.html`
 - `help.html`

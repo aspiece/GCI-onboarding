@@ -670,8 +670,8 @@ button:focus-visible {
   color: var(--color-text-muted);
 }
 
-/* ─── Orientation Checklist ──────────────────────────────────────────────────── */
-.orientation-checklist {
+/* ─── Task Checklist ─────────────────────────────────────────────────────────── */
+.task-checklist {
   margin-top: var(--space-lg);
   background: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -679,20 +679,20 @@ button:focus-visible {
   padding: var(--space-lg);
 }
 
-.orientation-checklist h3 {
+.task-checklist h3 {
   font-size: var(--font-size-base);
   font-weight: 600;
   margin-bottom: var(--space-md);
   color: var(--color-text);
 }
 
-.orientation-checklist ul {
+.task-checklist ul {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
-.orientation-checklist li {
+.task-checklist li {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
@@ -801,7 +801,7 @@ button:focus-visible {
   opacity: 0.8;
 }
 
-/* ─── Orientation Page ───────────────────────────────────────────────────────── */
+/* ─── Content Pages ──────────────────────────────────────────────────────────── */
 .page-heading {
   font-size: var(--font-size-3xl);
   font-weight: 800;

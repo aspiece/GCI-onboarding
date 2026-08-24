@@ -1,5 +1,7 @@
 # Tracking Setup
 
+> Current launch note: the contact information step now uses a Google Form linked from `secureCheckInUrl` in `js/config.js`. The Apps Script secure contact form flow below is legacy reference only.
+
 This setup keeps the public onboarding site separate from private student data. The public GitHub site shows the onboarding steps. The Google Sheet and Apps Script should be created from the school Google account that is allowed to store student information.
 
 ## Google Sheet
@@ -35,7 +37,7 @@ This setup keeps the public onboarding site separate from private student data. 
    - Execute as: User accessing the web app
    - Who has access: users in the school Google domain
 11. Copy the deployed web app URL.
-12. Paste the deployed web app URL into `secureCheckInUrl` in `js/config.js`.
+12. Do not use this deployed web app URL for the live contact information form unless you intentionally return to the legacy Apps Script flow.
 13. Copy `js/private-config.example.js` to `js/private-config.js` only for local/private progress tracking tests.
 14. Paste the deployed web app URL and shared secret into `js/private-config.js`.
 
@@ -45,13 +47,13 @@ Example:
 window.SITE_PRIVATE_CONFIG = {
   trackingScriptUrl: "YOUR_DEPLOYED_WEB_APP_URL",
   trackingSharedSecret: "YOUR_SHARED_SECRET",
-  secureCheckInUrl: "YOUR_DEPLOYED_WEB_APP_URL"
+  secureCheckInUrl: "YOUR_CONTACT_INFORMATION_GOOGLE_FORM_URL"
 };
 ```
 
 Do not commit `js/private-config.js` to the public repository.
 
-For a public GitHub Pages deployment, do not commit `trackingSharedSecret`. A static site cannot keep that value secret. The secure contact form URL may be committed if the Apps Script web app is restricted to school-domain users.
+For a public GitHub Pages deployment, do not commit `trackingSharedSecret`. A static site cannot keep that value secret. The contact information Google Form URL may be committed when the form itself is configured appropriately for school use.
 
 ## Permission Warning
 
@@ -69,7 +71,7 @@ Students should not proceed if the project name is still `Untitled project` or i
 
 1. Refresh the local preview.
 2. Enter a test name and student ID.
-3. Open the secure contact form.
+3. Open the contact information form.
 4. Submit test contact information while signed in with a district account.
 5. Return to the portal, check the acknowledgment, and select a course.
 6. Mark one onboarding step complete.

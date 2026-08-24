@@ -15,14 +15,12 @@ const SITE_CONFIG = {
   // URL for the onboarding setup check Google Form — replace with actual form URL
   setupCheckUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdxjlf5uciQGZC0fg7-eHgv8q7NXk8B7buDldYWf4beXI_9sg/viewform",
 
-  // URL for the help/problem report Google Form — replace with actual form URL
   // Deployed Google Apps Script web app URL for onboarding progress tracking.
   // Keep blank in public GitHub Pages deployments unless a server-side proxy is added.
   trackingScriptUrl: "", // PLACEHOLDER
 
-  // Public link to the district-authenticated secure contact check-in form.
-  // This URL may be public because the Apps Script deployment should require school-domain sign-in.
-  secureCheckInUrl: "https://script.google.com/a/macros/geneseeisd.org/s/AKfycbzoh-Cmaa1xKnO5rZssUWwnqV53jIqJolaLWuo4SaRD_VUh9KHUGrnFhLqq089Eypqv/exec",
+  // Public link to the contact information Google Form.
+  secureCheckInUrl: "https://docs.google.com/forms/d/e/1FAIpQLSegfpV2yofgrJdFOMYAZ9e_pD85U7x_wu8aP5mFHiz5yECLiw/viewform?usp=sharing&ouid=103074975685673304273",
 
   softwareStoreLinks: {
     teams: "https://apps.microsoft.com/detail/xp8bt8dw290mpq",

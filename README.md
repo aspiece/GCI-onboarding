@@ -51,7 +51,7 @@ The `SITE_CONFIG` object contains:
 | Key | Description |
 |-----|-------------|
 | `setupCheckUrl` | URL for the onboarding setup check Google Form |
-| `secureCheckInUrl` | Public URL for the district-authenticated secure contact check-in form |
+| `secureCheckInUrl` | Public URL for the contact information Google Form |
 | `courses.*` | One entry per course (see below) |
 
 Each course has:
@@ -174,11 +174,11 @@ Public services (Gmail, Google Drive, Google Classroom, Microsoft Teams, JuiceMi
 ## Privacy
 
 - Students do not enter their name, student ID, password, or contact information directly into the public portal.
-- Students complete cell phone, personal email, and parent/guardian contact information in the district-authenticated Apps Script contact form.
+- Students complete cell phone, personal email, and parent/guardian contact information in the linked Google Form.
 - Students submit their name, student ID, course, and setup status through the district Google Form used for the Setup Check.
 - Progress tracking uses browser `localStorage` so students can continue on the same device.
 - Contact and parent/guardian information is not entered into or kept by the public static site.
-- The live secure contact check-in URL may be stored in `js/config.js` when the Apps Script web app is restricted to school-domain users.
+- The live contact information form URL is stored in `js/config.js`.
 - When `trackingScriptUrl` is configured in untracked `js/private-config.js`, course selection and step progress events are sent to the instructor-owned Google Sheet through Google Apps Script.
 - For public repositories, keep the progress-tracking shared secret in untracked `js/private-config.js`, not in committed source files.
 - Information collected is received only by GCI Computer Science program staff and used only for emergencies, workplace learning activities, and connections to potential employers.

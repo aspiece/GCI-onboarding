@@ -55,19 +55,6 @@
     return window.SITE_PRIVATE_CONFIG?.secureCheckInUrl || SITE_CONFIG.secureCheckInUrl || "";
   }
 
-  function getSecureCheckInReturnUrl() {
-    const secureUrl = getSecureCheckInUrl();
-    if (!secureUrl) return "";
-
-    try {
-      const url = new URL(secureUrl);
-      url.searchParams.set("returnUrl", window.location.href);
-      return url.toString();
-    } catch {
-      return secureUrl;
-    }
-  }
-
   function isTrackingConfigured() {
     const url = getTrackingUrl();
     return url && !url.includes("PLACEHOLDER");
@@ -160,14 +147,14 @@
 
     const secureContactContent = `
       <div class="task-checklist">
-        <h3>Secure contact check-in</h3>
+        <h3>Contact information form</h3>
         <p><strong>Complete this after your instructor gives you your GCI student ID and password.</strong></p>
-        <p>The secure contact form asks for your student ID and contact information. If you do not know your student ID yet, stop here and ask your instructor before opening the form.</p>
+        <p>The contact information form asks for your student ID and contact information. If you do not know your student ID yet, stop here and ask your instructor before opening the form.</p>
         <p>GCI Computer Science staff use this information only for emergencies, workplace learning activities, and connections to potential employers.</p>
         ${getSecureCheckInUrl()
-          ? `<a class="btn-primary" href="${esc(getSecureCheckInReturnUrl())}" target="_blank" rel="noopener noreferrer" aria-label="Open secure contact form in new tab">Open Secure Contact Form</a>`
-          : `<button class="btn-primary" type="button" disabled aria-label="Open secure contact form in new tab">Open Secure Contact Form</button>`}
-        ${getSecureCheckInUrl() ? "" : `<p class="step-note">The secure contact form link has not been configured yet. Ask your instructor for help.</p>`}
+          ? `<a class="btn-primary" href="${esc(getSecureCheckInUrl())}" target="_blank" rel="noopener noreferrer" aria-label="Open contact information form in new tab">Open Contact Information Form</a>`
+          : `<button class="btn-primary" type="button" disabled aria-label="Open contact information form in new tab">Open Contact Information Form</button>`}
+        ${getSecureCheckInUrl() ? "" : `<p class="step-note">The contact information form link has not been configured yet. Ask your instructor for help.</p>`}
       </div>
       <p class="step-note">Do not enter your password in any onboarding form. Passwords should only be given by your instructor in person.</p>
     `;
@@ -178,7 +165,7 @@
         <ol class="mission-list">
           <li>Open the browser your instructor tells you to use.</li>
           <li>Sign in with the account your instructor assigns for this course.</li>
-          <li>Complete the secure contact check-in below if your instructor directs you to do so.</li>
+          <li>Complete the contact information form below if your instructor directs you to do so.</li>
         </ol>
         ${secureContactContent}
       `
@@ -189,12 +176,12 @@
           <li>Get your GCI student ID from your instructor.</li>
           <li>Write down your GCI email format: <strong>gci.[student ID]@students.geneseeisd.org</strong>.</li>
           <li>Get your password from your instructor in person.</li>
-          <li>After you have your GCI student ID and password, complete the secure contact check-in below.</li>
+          <li>After you have your GCI student ID and password, complete the contact information form below.</li>
         </ol>
         ${secureContactContent}
         <div class="task-checklist">
           <h3>Tool setup</h3>
-          <p>After you submit the secure contact form, continue setting up the tools you will use often.</p>
+          <p>After you submit the contact information form, continue setting up the tools you will use often.</p>
           <ol class="mission-list">
           <li>Open Chrome or Edge and create a browser profile with your program account.</li>
           <li>Turn on sync so your bookmarks and settings stay with your account.</li>

@@ -290,6 +290,22 @@
       "Microsoft Teams",
       "Visual Studio Code"
     ].includes(tool.label));
+    const needsCodeHSClassroomApproval = [
+      "introCybersecurity",
+      "apCybersecurity"
+    ].includes(course.id);
+    const codeHSClassroomApproval = needsCodeHSClassroomApproval
+      ? `
+        <div class="task-checklist">
+          <h3>CodeHS score sharing approval</h3>
+          <p>Allow CodeHS to share scores with Google Classroom so your instructor can receive your CodeHS progress correctly.</p>
+          <button class="btn-primary ext-link" data-url="https://codehs.com/student/setup_google_classroom" aria-label="Open CodeHS Google Classroom approval in new tab">
+            Approve CodeHS Score Sharing
+          </button>
+          <p class="step-note">Use your GCI Google credentials and follow the prompts to allow access.</p>
+        </div>
+      `
+      : "";
 
     const toolCards = courseTools.map(tool => `
       <div class="tool-card">
@@ -315,6 +331,7 @@
         <div class="tool-list">
           ${toolCards || `<p class="step-note">No additional course-specific tools are listed for this course. Continue to the setup check.</p>`}
         </div>
+        ${codeHSClassroomApproval}
       </section>
     `;
   }
